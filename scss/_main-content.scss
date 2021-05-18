@@ -1,0 +1,18 @@
+//main content-----------------
+//-----------------------------
+//-----------------------------
+@import 'variables';
+
+.content{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 200px;
+    opacity: 0;
+    visibility: hidden;
+
+    p{
+        color: grey;
+    }
+}
