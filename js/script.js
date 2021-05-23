@@ -137,15 +137,15 @@ main_menu_a.on('click', function () {
         
 });
 
-// -----------------------------------------change section on scroll
+// change section on scroll
+/*
 document.addEventListener("DOMContentLoaded", function(){
 
     gsap.utils.toArray("section").forEach(function(section){
         
         let content = section.querySelector(".content"); 
-        //console.log(content);
 
-            hide(content);
+        hide(content);
 
         ScrollTrigger.create({
             trigger: section,
@@ -160,7 +160,34 @@ document.addEventListener("DOMContentLoaded", function(){
             //markers: true
         })
     })
-});
+});*/
+
+function contentHide(){
+    gsap.utils.toArray("section").forEach(function(section){
+        
+        let content = section.querySelector(".content"); 
+
+        hide(content);
+
+        ScrollTrigger.create({
+            trigger: section,
+            start: "center bottom",
+            end: "center top",
+            onEnter:()=> show(content)||selectNavigation(content),
+            onEnterBack:()=> show(content)||selectNavigation(content),
+            onLeave:()=> hide(content),
+            onLeaveBack:()=> hide(content),
+            scrub: false,
+            once: false,
+            //markers: true
+        })
+    })
+}
+if (window.matchMedia('(min-width: 769px)').matches) {
+    document.addEventListener("DOMContentLoaded", contentHide());
+}else{
+    $(".content").css({"opacity":"1", "visibility":"inherit", "position":"relative"})
+}
 
 // aspect ratio calculator
 //
@@ -188,4 +215,4 @@ aspectRatioCalc(asside3, aspect_ratio_asside);
 aspectRatioCalc(asside4, aspect_ratio_asside);
 aspectRatioCalc(main_menu_container, aspect_ratio_asside);
 var bottom = $(window).scrollTop() + $(window).height();
-console.log(bottom);
+

@@ -719,6 +719,15 @@ svg {
   }
 }
 
+@media only screen and (min-width: 2500px) {
+  .scroll-container {
+    bottom: 1%;
+  }
+  .scroll-container .scroll .scroll_arrow {
+    height: 60%;
+  }
+}
+
 .panel {
   width: 100%;
   height: 100%;

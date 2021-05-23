@@ -147,6 +147,7 @@ html, body {
     }
 }
 
+//scroll arrow
 .scroll-container{
     position: fixed;
     bottom: 0;
@@ -175,6 +176,17 @@ html, body {
         }
     }
 }
+
+@media only screen and (min-width: 2500px){
+    
+    .scroll-container{
+        bottom: 1%;
+        
+        .scroll .scroll_arrow {
+            height: 60%;
+        }
+    }
+    }
 
 // box -------------------------------
 .panel {
