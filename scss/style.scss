@@ -11,7 +11,7 @@ html, body {
 
 .preloader{
     position: fixed;
-    background-color: gray;
+    background-color: $main-dark;
     width: 100%;
     height: 100%;
     top: 0;
@@ -34,7 +34,7 @@ html, body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-color: #464646;
+    background-color: $main-dark;
     display: none;
 }
 
@@ -43,7 +43,7 @@ html, body {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgb(160, 24, 24);
+    background: $main-dark;
     
     
     
@@ -85,7 +85,7 @@ html, body {
         right: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, rgba(22,22,22,0) 8%, rgba(22,22,22,1) 90%);
+        background: linear-gradient(90deg, rgba($main-dark, 0) 30%, rgba($main-dark, 1) 90%);
     }
 }
 
@@ -99,7 +99,7 @@ html, body {
         right: 0;
         width: 100%;
         height: 100%;
-        background:rgba(22,22,22,1);
+        background:rgba($main-dark, 1);
         opacity: 1;
         animation: 1.5s both;
         animation-name: bg-img-animate;
@@ -220,7 +220,7 @@ html, body {
         margin: 0;
         text-transform: uppercase;
         font-weight: 700;
-        background: -webkit-linear-gradient(left, $main-dark, rgba($main-dark, .1));
+        background: -webkit-linear-gradient(left, $left-title-dark, rgba($left-title-dark, .05));
         -webkit-text-fill-color: transparent;
         background-clip: text;
         -webkit-background-clip: text;

@@ -75,6 +75,7 @@ function selectNavigation(content){
         allBackgroun_img = $(".bg-img"),
         contentTitleRight = $(".content-title-right"),
         actual_titleRight = $("."+actualContentId+"_title-right"),
+        social_icon = $(".social-network_fixed-block"),
         scrollArrow = $(".scroll_arrow");
     
     //menu selected
@@ -94,11 +95,13 @@ function selectNavigation(content){
         scrollArrow.css('-webkit-transform','rotate(180deg)');
         scrollArrow.css('-moz-transform','rotate(180deg)');
         scrollArrow.css('transform','rotate(180deg)');
+        social_icon.hide();
     }
     else{
         scrollArrow.css('-webkit-transform','rotate(0deg)');
         scrollArrow.css('-moz-transform','rotate(0deg)');
         scrollArrow.css('transform','rotate(0deg)');
+        social_icon.show();
     }
 
     //backgroun scale scroll
