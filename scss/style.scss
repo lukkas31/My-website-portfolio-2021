@@ -3,9 +3,10 @@ html, body {
     font-size: 100%;
 }
 
+@import 'variables';
 @import 'main-content';
 @import 'asside';
-@import 'variables';
+
 
 //preloader
 
@@ -49,7 +50,7 @@ html, body {
     
     & .background_kto-som{
         @extend.bg-img;
-        background-image: url("../img/1604860029213-2test2.jpg"); 
+        background-image: url("../img/Lukas-bg-4k.jpg"); 
         filter: grayscale(100%);
         background-position:50% 0;
     }
@@ -195,8 +196,20 @@ html, body {
     top: 0;
     left: 0; 
 }
-//vertical right text---------------------------------------------
 
+//copy right text
+.copyright_text{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    writing-mode:vertical-rl;
+    z-index: 99;
+    margin: 0;
+    color:rgba($main_text, .2);
+    font-size: .6rem;
+}
+
+//vertical right text---------------------------------------------
 .content-title-right{
     position: fixed;
     height: 100%;
@@ -273,4 +286,5 @@ html, body {
     100% {opacity: 1;}
 }
 
-
+// mobile media queries
+@import 'mobile';

@@ -7,17 +7,18 @@ html, body {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 300px;
+  max-width: 300px;
   height: 200px;
   opacity: 0;
   visibility: hidden;
+  z-index: 100;
 }
 
 .content p {
   color: grey;
 }
 
-.asside {
+.asside-menu_fragment_1 {
   position: fixed;
   left: 4%;
   top: 0;
@@ -30,7 +31,7 @@ html, body {
           clip-path: polygon(0 27.8%, 0 80%, 100% 99.1%, 100% 92%, 45% 81%, 100% 70%, 100% 0);
 }
 
-.asside2 {
+.asside-menu_fragment_2 {
   position: fixed;
   left: 4%;
   top: 0;
@@ -43,7 +44,7 @@ html, body {
           clip-path: polygon(49.8% 81%, 100% 91%, 100% 71%);
 }
 
-.asside3 {
+.asside-menu_fragment_3 {
   position: fixed;
   left: 4%;
   top: 0;
@@ -56,7 +57,7 @@ html, body {
           clip-path: polygon(0 81%, 0% 100%, 99.5% 100%);
 }
 
-.asside4 {
+.asside-menu_fragment_4 {
   position: fixed;
   left: 4%;
   top: 0;
@@ -558,7 +559,7 @@ svg {
 }
 
 .background .background_kto-som {
-  background-image: url("../img/1604860029213-2test2.jpg");
+  background-image: url("../img/Lukas-bg-4k.jpg");
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
   background-position: 50% 0;
@@ -735,6 +736,19 @@ svg {
   left: 0;
 }
 
+.copyright_text {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  z-index: 99;
+  margin: 0;
+  color: rgba(240, 240, 240, 0.2);
+  font-size: .6rem;
+}
+
 .content-title-right {
   position: fixed;
   height: 100%;
@@ -819,6 +833,45 @@ svg {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .asside-menu {
+    height: 100%;
+    left: 0;
+    -webkit-transform: translate(-30%);
+            transform: translate(-30%);
+  }
+  .main-menu {
+    display: none;
+  }
+  .content {
+    left: 0;
+  }
+  .background::after {
+    display: none;
+  }
+  .content-title-right {
+    display: none;
+  }
+  .title,
+  .title2 {
+    width: 40%;
+    position: absolute;
+  }
+  .social-network_fixed-block {
+    display: none;
+  }
+  .copyright_text {
+    -webkit-writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: horizontal-tb;
+    position: relative;
+    text-align: right;
+  }
+  .scroll-container {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

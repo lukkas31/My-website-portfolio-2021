@@ -195,10 +195,12 @@ if (window.matchMedia('(min-width: 769px)').matches) {
 // aspect ratio calculator
 //
 let aspect_ratio_asside = 3.5,
-    asside = $(".asside"),
-    asside2 = $(".asside2"),
-    asside3 = $(".asside3"),
-    asside4 = $(".asside4"),
+    asside = $(".asside-menu");
+    /*
+    asside2 = $(".asside-menu_fragment_2"),
+    asside3 = $(".asside-menu_fragment_3"),
+    asside4 = $(".asside-menu_fragment_4"),
+    */
     main_menu_container = $(".main-menu");
 
 function aspectRatioCalc(object, aspectRatio){
@@ -213,9 +215,7 @@ function aspectRatioCalc(object, aspectRatio){
 }
 
 aspectRatioCalc(asside, aspect_ratio_asside);
-aspectRatioCalc(asside2, aspect_ratio_asside);
-aspectRatioCalc(asside3, aspect_ratio_asside);
-aspectRatioCalc(asside4, aspect_ratio_asside);
+
 aspectRatioCalc(main_menu_container, aspect_ratio_asside);
 var bottom = $(window).scrollTop() + $(window).height();
 

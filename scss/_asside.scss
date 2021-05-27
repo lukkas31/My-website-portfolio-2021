@@ -1,10 +1,10 @@
 //asside-----------------------
 //-----------------------------
 //-----------------------------
-@import 'variables';
+//@import 'variables';
 
 //asside block--------------------------
-.asside{
+.asside-menu_fragment_1{
     position: fixed;
     left: 4%;
     top: 0;
@@ -16,7 +16,7 @@
 
 }
 
-.asside2{
+.asside-menu_fragment_2{
     position: fixed;
     left: 4%;
     top: 0;
@@ -28,7 +28,7 @@
 
 }
 
-.asside3{
+.asside-menu_fragment_3{
     position: fixed;
     left: 4%;
     top: 0;
@@ -39,7 +39,7 @@
     clip-path: polygon(0 81%, 0% 100%, 99.5% 100%);
 }
 
-.asside4{
+.asside-menu_fragment_4{
     position: fixed;
     left: 4%;
     top: 0;
