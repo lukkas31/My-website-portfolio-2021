@@ -196,11 +196,6 @@ if (window.matchMedia('(min-width: 769px)').matches) {
 //
 let aspect_ratio_asside = 3.5,
     asside = $(".asside-menu");
-    /*
-    asside2 = $(".asside-menu_fragment_2"),
-    asside3 = $(".asside-menu_fragment_3"),
-    asside4 = $(".asside-menu_fragment_4"),
-    */
     main_menu_container = $(".main-menu");
 
 function aspectRatioCalc(object, aspectRatio){
