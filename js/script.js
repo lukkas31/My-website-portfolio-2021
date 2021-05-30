@@ -141,29 +141,6 @@ main_menu_a.on('click', function () {
 });
 
 // change section on scroll
-/*
-document.addEventListener("DOMContentLoaded", function(){
-
-    gsap.utils.toArray("section").forEach(function(section){
-        
-        let content = section.querySelector(".content"); 
-
-        hide(content);
-
-        ScrollTrigger.create({
-            trigger: section,
-            start: "center bottom",
-            end: "center top",
-            onEnter:()=> show(content)||selectNavigation(content),
-            onEnterBack:()=> show(content)||selectNavigation(content),
-            onLeave:()=> hide(content),
-            onLeaveBack:()=> hide(content),
-            scrub: false,
-            once: false,
-            //markers: true
-        })
-    })
-});*/
 
 function contentHide(){
     gsap.utils.toArray("section").forEach(function(section){

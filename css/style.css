@@ -3,19 +3,146 @@ html, body {
   font-size: 100%;
 }
 
+.panel {
+  width: 100%;
+  min-height: 100%;
+}
+
 .content {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  max-width: 300px;
-  height: 200px;
+  top: 0;
+  left: 30%;
+  max-width: 60%;
+  height: 100%;
   opacity: 0;
   visibility: hidden;
-  z-index: 100;
+  z-index: 2;
 }
 
 .content p {
   color: grey;
+}
+
+.row {
+  height: 100%;
+}
+
+.video-box {
+  position: relative;
+  height: 20vh;
+  -webkit-box-shadow: -8px 10px 15px rgba(0, 0, 0, 0.4);
+          box-shadow: -8px 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+article {
+  padding: 2%;
+}
+
+.video-box_cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+.video-box_title_label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
+  -webkit-transition: .7s;
+  transition: .7s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+.video-box_title_label h3 {
+  position: absolute;
+  width: 55%;
+  left: 0;
+  top: 55%;
+  font-size: 1em;
+  letter-spacing: .2rem;
+  text-align: center;
+  color: rgba(196, 196, 196, 0.7);
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.video-box_title_label h4 {
+  position: absolute;
+  width: 55%;
+  left: 0;
+  top: 70%;
+  font-size: .8em;
+  letter-spacing: .2rem;
+  text-align: center;
+  color: rgba(196, 196, 196, 0.7);
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.video-box:hover .video-box_title_label {
+  -webkit-clip-path: polygon(0 0, 45% 0, 60% 100%, 0 100%);
+          clip-path: polygon(0 0, 45% 0, 60% 100%, 0 100%);
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+
+.video-box:hover .video-box_cover {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.video-box:hover h3 {
+  top: 60%;
+  opacity: 1;
+}
+
+.video-box:hover h4 {
+  top: 75%;
+  opacity: 1;
+}
+
+.video-button_container {
+  height: 2vh;
+  width: 100%;
+  padding-left: 2%;
+  padding-right: 2%;
+  text-align: right;
+  vertical-align: baseline;
+}
+
+.video-button_container a {
+  text-decoration: none;
+  font-size: .7em;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  color: rgba(196, 196, 196, 0.3);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.video-button_container a:hover {
+  color: rgba(196, 196, 196, 0.7);
 }
 
 .asside-menu_fragment_1 {
@@ -24,8 +151,8 @@ html, body {
   top: 0;
   height: 90%;
   background-color: rgba(141, 0, 0, 0.6);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   z-index: 2;
   -webkit-clip-path: polygon(0 27.8%, 0 80%, 100% 99.1%, 100% 92%, 45% 81%, 100% 70%, 100% 0);
           clip-path: polygon(0 27.8%, 0 80%, 100% 99.1%, 100% 92%, 45% 81%, 100% 70%, 100% 0);
@@ -37,8 +164,8 @@ html, body {
   top: 0;
   height: 90%;
   background-color: rgba(141, 0, 0, 0.6);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   z-index: 2;
   -webkit-clip-path: polygon(49.8% 81%, 100% 91%, 100% 71%);
           clip-path: polygon(49.8% 81%, 100% 91%, 100% 71%);
@@ -50,8 +177,8 @@ html, body {
   top: 0;
   height: 90%;
   background-color: rgba(141, 0, 0, 0.6);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   z-index: 2;
   -webkit-clip-path: polygon(0 81%, 0% 100%, 99.5% 100%);
           clip-path: polygon(0 81%, 0% 100%, 99.5% 100%);
@@ -63,8 +190,8 @@ html, body {
   top: 0;
   height: 90%;
   background-color: rgba(141, 0, 0, 0.6);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   z-index: 2;
   -webkit-clip-path: polygon(0 26.8%, 0 0, 97% 0);
           clip-path: polygon(0 26.8%, 0 0, 97% 0);
@@ -541,7 +668,7 @@ svg {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: url("../img/vlcsnap_black.png");
+  background-image: url("../img/Lukas-bg-2100.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -559,7 +686,7 @@ svg {
 }
 
 .background .background_kto-som {
-  background-image: url("../img/Lukas-bg-4k.jpg");
+  background-image: url("../img/Lukas-bg-2100.png");
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
   background-position: 50% 0;
@@ -598,6 +725,12 @@ svg {
   height: 100%;
   background: -webkit-gradient(linear, left top, right top, color-stop(30%, rgba(20, 20, 20, 0)), color-stop(90%, #141414));
   background: linear-gradient(90deg, rgba(20, 20, 20, 0) 30%, #141414 90%);
+}
+
+@media only screen and (min-width: 2100px) {
+  .background .background_kto-som {
+    background-image: url("../img/Lukas-bg-4k.jpg");
+  }
 }
 
 .background .background-visible {
@@ -641,6 +774,7 @@ svg {
   position: fixed;
   width: 100%;
   top: 2%;
+  z-index: 4;
 }
 
 .social-network_container {
@@ -657,8 +791,8 @@ svg {
 .social-network i {
   color: rgba(196, 196, 196, 0.3);
   font-size: .9rem;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .social-network a:hover i {
@@ -727,13 +861,6 @@ svg {
   .scroll-container .scroll .scroll_arrow {
     height: 60%;
   }
-}
-
-.panel {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
 }
 
 .copyright_text {
@@ -837,6 +964,14 @@ svg {
 }
 
 @media only screen and (max-width: 550px) {
+  .background .background_kto-som {
+    background-image: -webkit-image-set(url("../img/Lukas-bgmobile-800.png") 1x, url("../img/Lukas-bgmobile-1600.png") 2x, url("../img/Lukas-bgmobile-2400.png") 3x);
+    background-image: image-set(url("../img/Lukas-bgmobile-800.png") 1x, url("../img/Lukas-bgmobile-1600.png") 2x, url("../img/Lukas-bgmobile-2400.png") 3x);
+    background-position: 15% 0;
+  }
+}
+
+@media only screen and (max-width: 550px) {
   .asside-menu {
     height: 100%;
     left: 0;
@@ -872,6 +1007,9 @@ svg {
   }
   .scroll-container {
     display: none;
+  }
+  .panel {
+    min-height: 400px;
   }
 }
 /*# sourceMappingURL=style.css.map */
