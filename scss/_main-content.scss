@@ -29,14 +29,16 @@
     height: 100%;
 }
 //video content
+article{
+    padding: 2%;
+}
+
 .video-box{
     position: relative;
     height: 20vh; //mobile change
     box-shadow: -8px 10px 15px rgba(0, 0, 0, .4);
-}
+    overflow: hidden;
 
-article{
-    padding: 2%;
 }
 
 .video-box_cover{
@@ -45,7 +47,8 @@ article{
     height: 100%;
     object-fit: cover;
     filter: grayscale(100%);
-    transition: 1s;
+    transform: scale(1.15);
+    transition: .5s;
     transition-timing-function: ease-in-out;
 }
 
@@ -57,14 +60,15 @@ article{
     background-color: rgba(0, 0, 0, .1);
     backdrop-filter: blur(0px);
     transition: .7s;
-    transition-timing-function: ease-in-out;
+    transform: scale(1.1);
+    transition-timing-function: ease-in-out; //kubic bazier
 
     h3{
         position: absolute;
         width: 55%;
         left: 0;
         top: 55%;
-        font-size: 1em;
+        font-size: .8em;
         letter-spacing: .2rem;
         text-align: center;
         color: rgba(196, 196, 196, .7);
@@ -78,7 +82,7 @@ article{
         width: 55%;
         left: 0;
         top: 70%;
-        font-size: .8em;
+        font-size: .6em;
         letter-spacing: .2rem;
         text-align: center;
         color: rgba(196, 196, 196, .7);
@@ -86,6 +90,24 @@ article{
         transition: .5s;
         transition-delay: .3s;
     }
+}
+
+.video-box_play-button{
+    position: absolute;
+    width: 35px;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    background-color: rgba($main-red, .5);
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(3px);
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    transition: .5s;
+    transition-timing-function: ease-out;
+}
+.video-box_play-button:hover{
+    background-color: rgba($main-red, .7);
+    transition: .2s;
 }
 
 .video-box:hover{
@@ -98,6 +120,7 @@ article{
 
     .video-box_cover{
         filter: grayscale(0%);
+        transform: scale(1.05);
     }
 
     h3{
@@ -109,7 +132,12 @@ article{
         top: 75%;
         opacity: 1;
     }
+
+    .video-box_play-button{
+        left: 54%;
+    }
 }
+
 
 
 
