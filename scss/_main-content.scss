@@ -25,18 +25,58 @@
     }
 }
 
+article{
+    padding: 2%;
+
+}
 .row{
     height: 100%;
 }
-//video content
-article{
-    padding: 2%;
+
+//obout me content
+
+#kto{
+    .content{
+        max-width: 60%;
+        //left: 25%;
+    }
+
+    article{
+        //border: aqua 1px solid; //vymaž
+        height: 36%;
+        margin-top: 10%;
+        align-items: center; 
+        overflow: hidden;
+    }    
 }
+
+.kto-img{
+    position: relative;
+    width: 80%;
+    height: 33vh;
+    -webkit-filter: drop-shadow( -8px 6px 7px rgba(0, 0, 0, .7));
+    filter: drop-shadow( -8px 6px 7px rgba(0, 0, 0, .7));
+    background-image: url("..//img/myfoto.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $main-dark;
+    clip-path: polygon(100% 0, 100% 20%, 70% 50%, 100% 80%, 100% 100%, 0 100%, 0 0);
+}
+//https://css-tricks.com/using-box-shadows-and-clip-path-together/
+
+.kto-text_container{
+    //border: greenyellow 1px solid; //vymaž
+    height: 20%;
+}
+
+
+//video content
 
 .video-box{
     position: relative;
     height: 20vh; //mobile change
-    box-shadow: -8px 10px 15px rgba(0, 0, 0, .4);
+    box-shadow: -8px 10px 15px rgba(0, 0, 0, .5);
     overflow: hidden;
 
 }
@@ -110,6 +150,7 @@ article{
     transition: .2s;
 }
 
+
 .video-box:hover{
     
     .video-box_title_label{
@@ -117,22 +158,22 @@ article{
         background-color: rgba(0, 0, 0, .3);
         backdrop-filter: blur(3px);
     }
-
+    
     .video-box_cover{
         filter: grayscale(0%);
         transform: scale(1.05);
     }
-
+    
     h3{
         top: 60%;
         opacity: 1;
     }
-
+    
     h4{
         top: 75%;
         opacity: 1;
     }
-
+    
     .video-box_play-button{
         left: 54%;
     }
@@ -151,7 +192,7 @@ article{
     padding-right: 2%;
     text-align: right;
     vertical-align: baseline;
-
+    
     a{
         text-decoration: none;
         font-size: .7em;
@@ -160,8 +201,45 @@ article{
         color: rgba(196, 196, 196, .3);
         transition: .2s;
     }
-
+    
     a:hover{
         color: rgba(196, 196, 196, .7);
+    }
+}
+
+@media only screen and (min-width: 2000px){
+    .video-box_play-button{
+        width: 46px;
+        height: 66px;
+    }
+
+    .video-button_container a{
+        font-size: 1.1em;
+        letter-spacing: .3rem;
+    }
+}
+
+
+@media only screen and (min-width: 3000px){
+    .video-box_play-button{
+        width: 70px;
+        height: 100px;
+    }
+
+    .video-button_container a{
+        font-size: 1.5em;
+        letter-spacing: .4rem;
+    }
+
+    .video-box_title_label{
+        h3{
+            font-size: 1.5em;
+            letter-spacing: .4rem;
+        }
+
+        h4{
+            font-size: 1.3em;
+            letter-spacing: .4rem;
+        }
     }
 }

@@ -9,36 +9,6 @@ $(document).ready(function() {
     
 });
 
-//scroll trigger
-gsap.registerPlugin(ScrollTrigger);
-let scene = gsap.timeline();
-let scene2 = gsap.timeline();
-
-ScrollTrigger.create({
-    animation:scene,
-	trigger: "body",
-	start: "top top",
-	end: "100% 80%",
-	scrub:3,
-   // markers: true
-});
-
-
-scene.from(".title", {
-    xPercent: 65,
-    yPercent: -40,
-    scale: 1.9,
-    delay: 0.1,
-    ease: "power2.inOut",
-    autoRound: false
-},0);
-scene.from(".title2", {
-    xPercent: 80,
-    yPercent: 20,
-    scale: 1.9,
-    ease: "power2.inOut",
-    autoRound: false,
-},0);
 
 //refresh page
 $('.title, .title2').click(function() {
@@ -163,11 +133,47 @@ function contentHide(){
         })
     })
 }
+let xPercentTitle = 80,
+    xPercentTitle2 = 95; 
+    
 if (window.matchMedia('(min-width: 769px)').matches) {
     document.addEventListener("DOMContentLoaded", contentHide());
 }else{
-    $(".content").css({"opacity":"1", "visibility":"inherit", "position":"relative"})
+    $(".content").css({"opacity":"1", "visibility":"inherit", "position":"relative"});
+    xPercentTitle = 55;
+    xPercentTitle2 = 70; 
 }
+
+//scroll trigger
+gsap.registerPlugin(ScrollTrigger);
+let scene = gsap.timeline();
+let scene2 = gsap.timeline();
+
+ScrollTrigger.create({
+    animation:scene,
+	trigger: "body",
+	start: "top top",
+	end: "100% 80%",
+	scrub: 3,
+   // markers: true
+});
+
+
+scene.from(".title", {
+    xPercent: xPercentTitle,
+    yPercent: -40,
+    scale: 2,
+    delay: 0.1,
+    ease: "power2.inOut",
+    autoRound: false
+},0);
+scene.from(".title2", {
+    xPercent: xPercentTitle2,
+    yPercent: 20,
+    scale: 2,
+    ease: "power2.inOut",
+    autoRound: false,
+},0);
 
 // aspect ratio calculator
 //
