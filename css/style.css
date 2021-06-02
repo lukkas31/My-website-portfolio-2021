@@ -32,35 +32,62 @@ article {
 }
 
 #kto .content {
-  max-width: 60%;
+  max-width: 50%;
 }
 
 #kto article {
-  height: 36%;
-  margin-top: 10%;
+  margin-top: 20vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden;
 }
 
-.kto-img {
+.kto-img_inner {
   position: relative;
+  min-height: 33vh;
+}
+
+.kto-img_inner .kto-img_container {
+  position: absolute;
+  top: 0;
   width: 80%;
-  height: 33vh;
-  -webkit-filter: drop-shadow(-8px 6px 7px rgba(0, 0, 0, 0.7));
-  filter: drop-shadow(-8px 6px 7px rgba(0, 0, 0, 0.7));
-  background-image: url("..//img/myfoto.jpg");
+  min-height: 33vh;
+  -webkit-filter: drop-shadow(-5px 8px 7px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(-5px 8px 7px rgba(0, 0, 0, 0.3));
+}
+
+.kto-img_inner .kto-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/myfoto.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #141414;
+}
+
+.kto-img_inner .photo-fragment1 {
   -webkit-clip-path: polygon(100% 0, 100% 20%, 70% 50%, 100% 80%, 100% 100%, 0 100%, 0 0);
           clip-path: polygon(100% 0, 100% 20%, 70% 50%, 100% 80%, 100% 100%, 0 100%, 0 0);
 }
 
+.kto-img_inner .photo-fragment2 {
+  -webkit-clip-path: polygon(70% 50%, 100% 80%, 100% 20%);
+          clip-path: polygon(70% 50%, 100% 80%, 100% 20%);
+}
+
+.kto-img_inner .c-fragment2 {
+  margin-left: 3%;
+}
+
 .kto-text_container {
-  height: 20%;
+  min-height: 20vh;
+  padding: 4% 3% 0 3%;
+}
+
+.kto-text_container p {
+  text-align: justify;
 }
 
 .video-box {
@@ -79,15 +106,15 @@ article {
      object-fit: cover;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-  -webkit-transform: scale(1.15);
-          transform: scale(1.15);
+  -webkit-transform: scale(1.35);
+          transform: scale(1.35);
   -webkit-transition: .5s;
   transition: .5s;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
 }
 
-.video-box_title_label {
+.video-box_asside {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -98,21 +125,27 @@ article {
           backdrop-filter: blur(0px);
   -webkit-transition: .7s;
   transition: .7s;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
 }
 
-.video-box_title_label h3 {
+.video-box_asside .video-box_asside_inner {
   position: absolute;
-  width: 55%;
   left: 0;
-  top: 55%;
-  font-size: .8em;
-  letter-spacing: .2rem;
+  width: 55%;
+  height: 100%;
+  padding: 8%;
+}
+
+.video-box_asside h3 {
+  position: relative;
+  width: 100%;
+  top: 40%;
+  font-size: .7vw;
+  letter-spacing: .3vw;
+  font-weight: 500;
   text-align: center;
-  color: rgba(196, 196, 196, 0.7);
+  color: rgba(196, 196, 196, 0.8);
   opacity: 0;
   -webkit-transition: .5s;
   transition: .5s;
@@ -120,15 +153,15 @@ article {
           transition-delay: .3s;
 }
 
-.video-box_title_label h4 {
-  position: absolute;
-  width: 55%;
-  left: 0;
-  top: 70%;
-  font-size: .6em;
-  letter-spacing: .2rem;
+.video-box_asside h4 {
+  position: relative;
+  width: 100%;
+  top: 40%;
+  font-size: .5vw;
+  letter-spacing: .3vw;
+  font-weight: 500;
   text-align: center;
-  color: rgba(196, 196, 196, 0.7);
+  color: rgba(196, 196, 196, 0.8);
   opacity: 0;
   -webkit-transition: .5s;
   transition: .5s;
@@ -161,7 +194,7 @@ article {
   transition: .2s;
 }
 
-.video-box:hover .video-box_title_label {
+.video-box:hover .video-box_asside {
   -webkit-clip-path: polygon(0 0, 45% 0, 60% 100%, 0 100%);
           clip-path: polygon(0 0, 45% 0, 60% 100%, 0 100%);
   background-color: rgba(0, 0, 0, 0.3);
@@ -172,8 +205,8 @@ article {
 .video-box:hover .video-box_cover {
   -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
 }
 
 .video-box:hover h3 {
@@ -182,7 +215,7 @@ article {
 }
 
 .video-box:hover h4 {
-  top: 75%;
+  top: 60%;
   opacity: 1;
 }
 
@@ -222,6 +255,12 @@ article {
     font-size: 1.1em;
     letter-spacing: .3rem;
   }
+  .video-box_asside h3 {
+    font-size: .8vw;
+  }
+  .video-box_asside h4 {
+    font-size: .6vw;
+  }
 }
 
 @media only screen and (min-width: 3000px) {
@@ -231,14 +270,6 @@ article {
   }
   .video-button_container a {
     font-size: 1.5em;
-    letter-spacing: .4rem;
-  }
-  .video-box_title_label h3 {
-    font-size: 1.5em;
-    letter-spacing: .4rem;
-  }
-  .video-box_title_label h4 {
-    font-size: 1.3em;
     letter-spacing: .4rem;
   }
 }

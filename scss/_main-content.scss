@@ -18,7 +18,7 @@
     opacity: 0;
     visibility: hidden;
     z-index: 2;
-    //border: aqua 1px solid;
+    
 
     p{
         color: grey;
@@ -37,38 +37,76 @@ article{
 
 #kto{
     .content{
-        max-width: 60%;
+        max-width: 50%;
         //left: 25%;
     }
 
     article{
         //border: aqua 1px solid; //vymaž
-        height: 36%;
-        margin-top: 10%;
+        margin-top: 20vh;
         align-items: center; 
-        overflow: hidden;
-    }    
+        
+    }   
+    
 }
 
-.kto-img{
+.kto-img_inner{
+    
     position: relative;
-    width: 80%;
-    height: 33vh;
-    -webkit-filter: drop-shadow( -8px 6px 7px rgba(0, 0, 0, .7));
-    filter: drop-shadow( -8px 6px 7px rgba(0, 0, 0, .7));
-    background-image: url("..//img/myfoto.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: $main-dark;
-    clip-path: polygon(100% 0, 100% 20%, 70% 50%, 100% 80%, 100% 100%, 0 100%, 0 0);
+    min-height: 33vh;
+    
+    .kto-img_container{
+        position: absolute;
+        top: 0;
+        width: 80%;
+        min-height: 33vh; 
+        -webkit-filter: drop-shadow( -5px 8px 7px rgba(0, 0, 0, .3));
+        filter: drop-shadow( -5px 8px 7px rgba(0, 0, 0, .3));
+    }
+    
+    .kto-img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url("../img/myfoto.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: $main-dark;
+    }
+    
+    .photo-fragment1{
+        clip-path: polygon(100% 0, 100% 20%, 70% 50%, 100% 80%, 100% 100%, 0 100%, 0 0);
+    }
+    
+    .photo-fragment2{
+        clip-path: polygon(70% 50%, 100% 80%, 100% 20%);
+    }
+    
+    .c-fragment2{
+        margin-left: 3%;
+    }
 }
-//https://css-tricks.com/using-box-shadows-and-clip-path-together/
 
 .kto-text_container{
-    //border: greenyellow 1px solid; //vymaž
-    height: 20%;
+    min-height: 20vh;
+    padding: 4% 3% 0 3%;
+
+    p{
+        text-align: justify;
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
 
 
 //video content
@@ -87,12 +125,12 @@ article{
     height: 100%;
     object-fit: cover;
     filter: grayscale(100%);
-    transform: scale(1.15);
+    transform: scale(1.35);
     transition: .5s;
     transition-timing-function: ease-in-out;
 }
 
-.video-box_title_label{
+.video-box_asside{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -100,35 +138,43 @@ article{
     background-color: rgba(0, 0, 0, .1);
     backdrop-filter: blur(0px);
     transition: .7s;
-    transform: scale(1.1);
-    transition-timing-function: ease-in-out; //kubic bazier
+    transition-timing-function: ease-in-out;
+
+    .video-box_asside_inner{
+        position: absolute;
+        left: 0;
+        width: 55%;
+        height: 100%;
+        padding: 8%;
+
+    }
 
     h3{
-        position: absolute;
-        width: 55%;
-        left: 0;
-        top: 55%;
-        font-size: .8em;
-        letter-spacing: .2rem;
+        position: relative;
+        width: 100%;
+        top: 40%;
+        font-size: .7vw;
+        letter-spacing: .3vw;
+        font-weight: 500;
         text-align: center;
-        color: rgba(196, 196, 196, .7);
+        color: rgba(196, 196, 196, .8);
         opacity: 0;
         transition: .5s;
         transition-delay: .3s;
     }
 
     h4{
-        position: absolute;
-        width: 55%;
-        left: 0;
-        top: 70%;
-        font-size: .6em;
-        letter-spacing: .2rem;
+        position: relative;
+        width: 100%;
+        top: 40%;
+        font-size: .5vw;
+        letter-spacing: .3vw;
+        font-weight: 500;
         text-align: center;
-        color: rgba(196, 196, 196, .7);
+        color: rgba(196, 196, 196, .8);
         opacity: 0;
         transition: .5s;
-        transition-delay: .3s;
+        transition-delay: .3s;   
     }
 }
 
@@ -153,7 +199,7 @@ article{
 
 .video-box:hover{
     
-    .video-box_title_label{
+    .video-box_asside{
         clip-path: polygon(0 0, 45% 0, 60% 100%, 0 100%);
         background-color: rgba(0, 0, 0, .3);
         backdrop-filter: blur(3px);
@@ -161,7 +207,7 @@ article{
     
     .video-box_cover{
         filter: grayscale(0%);
-        transform: scale(1.05);
+        transform: scale(1.25);
     }
     
     h3{
@@ -170,7 +216,7 @@ article{
     }
     
     h4{
-        top: 75%;
+        top: 60%;
         opacity: 1;
     }
     
@@ -178,12 +224,6 @@ article{
         left: 54%;
     }
 }
-
-
-
-
-
-
 
 .video-button_container{
     height: 2vh;
@@ -207,6 +247,8 @@ article{
     }
 }
 
+
+
 @media only screen and (min-width: 2000px){
     .video-box_play-button{
         width: 46px;
@@ -216,6 +258,15 @@ article{
     .video-button_container a{
         font-size: 1.1em;
         letter-spacing: .3rem;
+    }
+    .video-box_asside{
+        h3{
+            font-size: .8vw;
+        }
+    
+        h4{
+            font-size: .6vw;
+        }
     }
 }
 
@@ -231,15 +282,4 @@ article{
         letter-spacing: .4rem;
     }
 
-    .video-box_title_label{
-        h3{
-            font-size: 1.5em;
-            letter-spacing: .4rem;
-        }
-
-        h4{
-            font-size: 1.3em;
-            letter-spacing: .4rem;
-        }
-    }
 }
