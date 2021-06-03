@@ -9,6 +9,43 @@ $(document).ready(function() {
     
 });
 
+//video lightbox
+let vLightbox = $('.video-lightbox'),
+    vBox = $('.video-box'),
+    vBoxBtn = vBox.find('.video-box_play-button');
+
+vLightbox.hide();
+
+vBoxBtn.on('click', function(event){
+    event.preventDefault();
+    
+    let videoHref = $(this).attr('data-url'),
+        iframe = $('iframe');
+    
+    iframe.attr('src', videoHref);
+    vLightbox.show();
+})
+
+vLightbox.on('click', function() {
+    $(this).hide('fast').find('#videoplay').removeAttr('src');
+});
+
+
+
+$(document).on('keyup', function(event) {
+    if ( event.which === 27 ){
+        vLightbox.hide('fast').find('#videoplay').removeAttr('src');
+        
+    }
+
+});
+
+
+
+
+
+
+
 
 //refresh page
 $('.title, .title2').click(function() {
@@ -95,8 +132,11 @@ let main_menu = $(".menu"),
     main_menu_a = main_menu.find("a"),
     main_menu_li = main_menu.find("li");
 
-main_menu_a.on('click', function () {
+main_menu_a.on('click', function (event) {
 
+    //event.preventDefault();
+
+    
     var a = $(this),
         click_li = a.parent(),
         href = a.attr('href');
@@ -107,13 +147,14 @@ main_menu_a.on('click', function () {
 
         click_li.addClass('selected');
         click_li.siblings('li').removeClass('selected');
-        
+
+    
 });
 
 // change section on scroll
 
 function contentHide(){
-    gsap.utils.toArray("section").forEach(function(section){
+    gsap.utils.toArray("section.panel").forEach(function(section){
         
         let content = section.querySelector(".content"); 
 

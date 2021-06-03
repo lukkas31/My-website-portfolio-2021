@@ -52,8 +52,8 @@ article {
   top: 0;
   width: 80%;
   min-height: 33vh;
-  -webkit-filter: drop-shadow(-5px 8px 7px rgba(0, 0, 0, 0.3));
-  filter: drop-shadow(-5px 8px 7px rgba(0, 0, 0, 0.3));
+  -webkit-filter: drop-shadow(-8px 6px 7px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(-8px 6px 7px rgba(0, 0, 0, 0.4));
 }
 
 .kto-img_inner .kto-img {
@@ -88,6 +88,7 @@ article {
 
 .kto-text_container p {
   text-align: justify;
+  color: rgba(196, 196, 196, 0.5);
 }
 
 .video-box {
@@ -272,6 +273,57 @@ article {
     font-size: 1.5em;
     letter-spacing: .4rem;
   }
+}
+
+.video-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 7;
+}
+
+.video-lightbox .video-lightbox_inner {
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+}
+
+.video-lightbox .video-lightbox_btn-back {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 7em;
+  height: 3em;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  background-color: rgba(141, 0, 0, 0.7);
+  vertical-align: middle;
+}
+
+.video-lightbox .video-lightbox_btn-back p {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 3em;
+  font-size: 1em;
+  color: #141414;
+  font-weight: 500;
+  letter-spacing: .15em;
+}
+
+.video-lightbox .video-lightbox_btn-back:hover {
+  background-color: rgba(141, 0, 0, 0.9);
+  cursor: pointer;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.video-lightbox iframe {
+  width: 100%;
+  height: 100%;
 }
 
 .asside-menu_fragment_1 {
@@ -1002,7 +1054,7 @@ svg {
           writing-mode: vertical-rl;
   z-index: 99;
   margin: 0;
-  color: rgba(240, 240, 240, 0.2);
+  color: rgba(196, 196, 196, 0.2);
   font-size: .6rem;
 }
 
