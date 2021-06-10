@@ -34,6 +34,8 @@ article{
 }
 
 //obout me content
+//
+//
 
 #kto{
     .content{
@@ -101,6 +103,172 @@ article{
     
 }
 
+// portfolio content
+//
+//
+#moje-prace article{
+    padding: 1% 3% 3% 3%;
+}
+.portfolio-box{
+    position: relative;
+    height: 20vh; //mobile change
+    //padding-left: 10%;
+    //padding-right: 10%;
+    box-shadow: -8px 10px 15px rgba(0, 0, 0, .5);
+    overflow: hidden;
+
+}
+
+.portfolio-box_cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    //filter: grayscale(100%);
+    transform: scale(1.45);
+    transition: .5s;
+    transition-timing-function: ease-in-out;
+}
+
+.portfolio-box_asside{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    background-color: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(0px);
+    transition: .7s;
+    transition-timing-function: ease-in-out;
+
+    .portfolio-box_asside_inner{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40%;
+        padding: 2% 8%;
+        //border: red 1px solid;
+
+    }
+
+    h3{
+        position: relative;
+        width: 100%;
+        height: 10%;
+        top: 0;
+        font-size: .7vw;
+        letter-spacing: .3vw;
+        font-weight: 500;
+        text-align: center;
+        color: rgba(248, 248, 248, 0.8);
+        opacity: 0;
+        transition: .5s;
+        transition-delay: .3s;
+        //border: blue 1px solid;
+    }
+
+    h4{
+        position: relative;
+        width: 100%;
+        top: 0;
+        font-size: .5vw;
+        letter-spacing: .3vw;
+        font-weight: 500;
+        text-align: center;
+        color: rgba(248, 248, 248, 0.801);
+        opacity: 0;
+        transition: .5s;
+        transition-delay: .3s;
+        //border: green 1px solid;
+    }
+}
+
+.portfolio-box:hover{
+    
+    .portfolio-box_asside{
+        clip-path: polygon(0 76%, 100% 60%, 100% 100%, 0% 100%);
+        background-color: rgba(0, 0, 0, .3);
+        backdrop-filter: blur(3px);
+    }
+    
+    .portfolio-box_cover{
+        filter: grayscale(0%);
+        transform: scale(1.1);
+    }
+    
+    h3{
+        top: 40%;
+        opacity: 1;
+    }
+    
+    h4{
+        top: 45%;
+        opacity: 1;
+    }
+    
+    .portfolio-box_play-button{
+        left: 54%;
+    }
+}
+
+.portfolio-box.lubka-web:hover{
+    .portfolio-box_asside{
+        background-color: rgba($lubkaWeb-color, .5);
+    }
+    
+    h4,h3{
+        color: rgba(0, 0, 0, 0.8);
+    }
+}
+.portfolio-box.my-web:hover{
+    .portfolio-box_asside{
+        background-color: rgba($main-red, .5);
+    }
+    
+    h4,h3{
+        color: rgba(196, 196, 196, 1);
+    }
+}
+
+
+
+
+.portfolio-button_container{
+    height: 3vh;
+    width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: right;
+    vertical-align: baseline;
+    
+    a{
+        text-decoration: none;
+        font-size: .7em;
+        font-weight: 500;
+        letter-spacing: .2rem;
+        color: rgba(196, 196, 196, .3);
+        transition: .2s;
+    }
+    
+    a:hover{
+        color: rgba(196, 196, 196, .7);
+    }
+}
+
+.porfolio-section_container{
+    height: 2vh;
+    width: 100%;
+    text-align: left;
+    padding: 0 3% 0 3%;
+
+    p{
+        font-size: .7em;
+        font-weight: 500;
+        letter-spacing: .2rem;
+        color: rgba(196, 196, 196, 1);
+        padding-bottom: 1vh;
+    }
+}
 
 
 
@@ -113,6 +281,8 @@ article{
 
 
 //video content
+//
+//
 
 .video-box{
     position: relative;
@@ -160,7 +330,7 @@ article{
         letter-spacing: .3vw;
         font-weight: 500;
         text-align: center;
-        color: rgba(196, 196, 196, .8);
+        color: rgba(196, 196, 196, 1);
         opacity: 0;
         transition: .5s;
         transition-delay: .3s;
@@ -339,6 +509,8 @@ article{
 }
 
 //kontakt
+//
+//
 
 #kontakt{
     width: 100%;
@@ -349,7 +521,6 @@ article{
 }
 
 ul.contact-list{
-    //border: double red 1px;
     height: 50%;
     width: 100%;
     list-style-type: none;
@@ -361,40 +532,42 @@ ul.contact-list{
     align-content: space-between;
     justify-content: space-evenly;
     
+    a{
+        text-decoration: none;
+    }
+
     a:hover{
         h3{
-            text-decoration: none;
             color: rgba($main-text, .7);
         }
         i{
-            text-decoration: none;
             color: rgba($main-text, .7);
         }
-    
+        
     }
 }
 
 li.contact-list_item{
-    //border: seagreen 1px dotted;
     height: 10%;
 }
 
 .contact-list_item_title{
     display: inline-block;
     height: 100%;
-
+    
     h3{
+
         font-size: 1em;
         color: rgba($main-text, .4);
         letter-spacing: .2em;
         font-weight: 500;
         text-decoration: none;
+        transition: .3s;
     }
 
 }
 
 .contact-list_item_icon{
-    //border: wheat 1px solid;
     display: inline-block;
     height: 100%;
     width: 10%;
@@ -404,59 +577,40 @@ li.contact-list_item{
     i{
         font-size: 1.5em;
         color: rgba($main-text, .4);
+        transition: .3s;
     }
 }
 
-
+//animated content
+//
+//
 /*
-#kont{
-    .content{
-        border:blue 1px solid;
-        display: flex;
-        justify-content: center;
-    }
+.animated-show{
+    opacity: 0;
+    animation: showcontent 3s both;
 }
 
-#kontakt{
-    
-    ul.kontakt-social{
-        width: 100%;
-        height: 50%;
-        border: antiquewhite 1px solid;
-        list-style-type: none;
-        padding: 0;
-        margin: auto 0;
-        text-align: right;
-    }
-    
-    li{
-        border: red 1px solid;
-        height: 25%;
-        //display: flex;
-        //flex-direction: row;
-        //align-items: center;
-    }
-
-    a{
-        text-decoration: none;
-    }
-
-    h2{
-        font-size: 1.3em;
-        display: inline;
-        color: rgba($main-text, .5);
-        letter-spacing: .2em;
-        font-weight: 500;
-
-    }
-
-    i{
-        width: 20px;
-        height: 20px;
-        font-size: 2em;
-        display: inline;
-        color: rgba($main-text, .5);
-        margin-left: 1em;
-    }
+@keyframes showcontent{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
 }
-*/
+
+.animated-show.porfolio-section_container{
+    animation-delay: 1s;
+    
+}
+
+.animated-hide{
+    opacity: 0;
+    animation: hidecontent 1s both;
+}
+
+@keyframes hidecontent{
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+.animated-show + .kto-text_container{
+    opacity: 1;
+    animation: showcontent 5s both;
+}*/
