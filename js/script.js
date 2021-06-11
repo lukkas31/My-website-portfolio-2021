@@ -3,10 +3,15 @@
 
 $(document).ready(function() {
     $('.preloader').addClass("none");
-    
+    gsap.from(".title", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
+    gsap.from(".title2", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
     let letter = $("path#letter");
-    letter.addClass("letters-animation");
-    
+    //letter.delay(1800).addClass("letters-animation");
+
+    letter.delay(300).queue(function(next){
+        $(this).addClass("letters-animation");
+        next();
+    });
     
     //video lightbox
     let vLightbox = $('.video-lightbox'),
@@ -39,13 +44,6 @@ $(document).ready(function() {
         
     });
     
-    
-    
-    
-    
-    
-    
-    
     //refresh page
     $('.title, .title2').click(function() {
         location.reload();
@@ -54,14 +52,8 @@ $(document).ready(function() {
     $(window).on('beforeunload', function() {
         $(window).scrollTop(0);
     });
-    
-    
-    
-    
-    
-    
-    //layout changes
-    
+     
+    //layout changes  
     function selectNavigation(content){
         
         
@@ -123,13 +115,9 @@ $(document).ready(function() {
     main_menu_li = main_menu.find("li");
     
     main_menu_a.on('click', function (event) {
-        
-        //event.preventDefault();
-        
-        
+    
         var a = $(this),
-        click_li = a.parent(),
-        href = a.attr('href');
+        click_li = a.parent();
         
         if(click_li.is('.selected') ) {
             return;
@@ -171,11 +159,7 @@ $(document).ready(function() {
         
         gsap.set(cont, {autoAlpha: 0});
         var newCont = $(cont);
-        newCont.find('#moving-part').removeClass('animated-show').addClass('animated-hide');
-        
-        //gsap.to(cont, {scaleX:0.8, scaleY:0.8, opacity:0.7});
-        //newCont.css({"opacity":"0", "visibility":"hidden"});
-        
+        newCont.find('#moving-part').removeClass('animated-show').addClass('animated-hide');    
     }
     
     function show(cont){
@@ -183,23 +167,24 @@ $(document).ready(function() {
         
         var newCont = $(cont);
         var contId = cont.getAttribute('id');
-        //newCont.css({"opacity":"1", "visibility":"inherit"});
         newCont.find('#moving-part').removeClass('animated-hide').addClass('animated-show');
 
        if(contId == 'kto-som' ){
-           gsap.from(".kto-img_inner", 1, {x: 100});
+           gsap.from(".c-fragment1", 1, {opacity: 0, delay: 0.3, x: 40, ease: "back.out(1)"});
+           gsap.from(".c-fragment2", 1.5, {opacity: 0, delay: 0.4, x: 100, ease: "back.out(1)"});
+           gsap.from(".kto-text_container", 1, {opacity: 0, delay: 0.6, y: 100, ease: "back.out(1)"});
        }
        else if (contId == 'moje-prace') {
-            gsap.from(".portfolio-box", 1, {x: 100});
+            gsap.from("#moving-port", 1, {opacity: 0, delay: 0.1, x: 100, ease: "back.out(1)", stagger : 0.1});
+            gsap.from("#moving-port-footer", 1, {opacity: 0, delay: 0.6, y: 60, ease: "power3.out"});
        }
        else if (contId == 'video') {
-            gsap.from(".video-box", 1, {x: 100});
+            gsap.from("#moving-vid", 1, {opacity: 0, x: 100, ease: "back.out(1)", stagger : 0.1});
+            gsap.from("#moving-vid-footer", 1, {opacity: 0, delay: 0.6, y: 60, ease: "power3.out"});
        }
        else if (contId == 'kontakt') {
-            gsap.from("li", 1, {x: 100});
+            gsap.from(".contact-list_item", 1, {opacity: 0, delay: 0.1, x: 100, ease: "back.out(1)", stagger: {each: 0.15, from: "end"}});
        }
-           
-       //dopln delay!
     }
     
     let xPercentTitle = 80,
@@ -216,7 +201,6 @@ $(document).ready(function() {
     //scroll trigger
     gsap.registerPlugin(ScrollTrigger);
     let scene = gsap.timeline();
-    let scene2 = gsap.timeline();
     
     ScrollTrigger.create({
         animation:scene,

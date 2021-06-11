@@ -58,16 +58,16 @@ html, body {
     
     & .background_moje-prace{
         @extend.bg-img;
-        background-image: url("../img/DJI_0399_3.JPG");
+        background-image: url("../img/Lukas-bg-2100.png");
         filter: grayscale(100%);
-        background-position:  50%;
+        background-position:50% 0;
     }
     
     & .background_video{
         @extend.bg-img;
-        background-image: url("../img/vlcsnap-2021-06-04-09h43m05s240.png");
+        background-image: url("../img/Lukas-bg-2100.png");
         filter: grayscale(100%);
-        //background-position:50% 0;
+        background-position:50% 0;
     }
     
     & .background_kontakt{
@@ -142,7 +142,7 @@ html, body {
     
     
     i{
-        color: rgba(196, 196, 196, .6);
+        color: rgba(196, 196, 196, .4);
         font-size: .9rem;
         transition: .2s;
     }

@@ -676,6 +676,35 @@ li.contact-list_item {
   cursor: pointer;
 }
 
+/*
+.title.title-animation{
+    clip-path: polygon(0 60%, 100% 59%, 100% 64%, 0 64%);
+    animation-timing-function: ease-out;
+    animation: title-animation 3s both;
+}*/
+#Vrstva_1.title-animation {
+  -webkit-clip-path: polygon(0 60%, 100% 59%, 100% 64%, 0 64%);
+          clip-path: polygon(0 60%, 100% 59%, 100% 64%, 0 64%);
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation: title-animation 3s both;
+          animation: title-animation 3s both;
+}
+
+@-webkit-keyframes title-animation {
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes title-animation {
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
 .letter_bigl.letters-animation {
   -webkit-clip-path: polygon(52% 45%, 52% 63%, 66% 63%, 67% 100%, 0 100%, 0 34%);
           clip-path: polygon(52% 45%, 52% 63%, 66% 63%, 67% 100%, 0 100%, 0 34%);
@@ -1153,16 +1182,17 @@ svg {
 }
 
 .background .background_moje-prace {
-  background-image: url("../img/DJI_0399_3.JPG");
+  background-image: url("../img/Lukas-bg-2100.png");
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-  background-position: 50%;
+  background-position: 50% 0;
 }
 
 .background .background_video {
-  background-image: url("../img/vlcsnap-2021-06-04-09h43m05s240.png");
+  background-image: url("../img/Lukas-bg-2100.png");
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
+  background-position: 50% 0;
 }
 
 .background .background_kontakt video {
@@ -1250,7 +1280,7 @@ svg {
 }
 
 .social-network i {
-  color: rgba(196, 196, 196, 0.6);
+  color: rgba(196, 196, 196, 0.4);
   font-size: .9rem;
   -webkit-transition: .2s;
   transition: .2s;

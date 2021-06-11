@@ -70,6 +70,22 @@
     z-index: 5;
     cursor: pointer;
 }
+/*
+.title.title-animation{
+    clip-path: polygon(0 60%, 100% 59%, 100% 64%, 0 64%);
+    animation-timing-function: ease-out;
+    animation: title-animation 3s both;
+}*/
+
+#Vrstva_1.title-animation{
+    clip-path: polygon(0 60%, 100% 59%, 100% 64%, 0 64%);
+    animation-timing-function: ease-out;
+    animation: title-animation 3s both;
+}
+
+@keyframes title-animation {   
+    100% {clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);}
+}
 
 //title1 animation
 .letter_bigl.letters-animation{
