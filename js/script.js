@@ -6,7 +6,6 @@ $(document).ready(function() {
     gsap.from(".title", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
     gsap.from(".title2", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
     let letter = $("path#letter");
-    //letter.delay(1800).addClass("letters-animation");
 
     letter.delay(300).queue(function(next){
         $(this).addClass("letters-animation");
@@ -58,22 +57,16 @@ $(document).ready(function() {
         
         
         let actualContentId = content.getAttribute('id'),
-        menu = $('.menu'),
-        selectedMenu = menu.find("."+actualContentId),
-        actualBackground = $(".background_"+actualContentId),
-        allBackgroun_img = $(".bg-img"),
-        contentTitleRight = $(".content-title-right"),
-        actual_titleRight = $("."+actualContentId+"_title-right"),
-        social_icon = $(".social-network_fixed-block"),
-        scrollArrow = $(".scroll_arrow");
+            menu = $('.menu'),
+            selectedMenu = menu.find("."+actualContentId),
+            contentTitleRight = $(".content-title-right"),
+            actual_titleRight = $("."+actualContentId+"_title-right"),
+            social_icon = $(".social-network_fixed-block"),
+            scrollArrow = $(".scroll_arrow");
         
         //menu selected
         main_menu_li.removeClass("selected");
         selectedMenu.addClass("selected");
-        
-        //content background image
-        allBackgroun_img.removeClass("background-visible");
-        actualBackground.addClass("background-visible");
         
         //right title
         contentTitleRight.removeClass("title-visible");
@@ -85,26 +78,16 @@ $(document).ready(function() {
             scrollArrow.css('-moz-transform','rotate(180deg)');
             scrollArrow.css('transform','rotate(180deg)');
             social_icon.hide();
+            $('.background_kontakt').show();
         }
         else{
             scrollArrow.css('-webkit-transform','rotate(0deg)');
             scrollArrow.css('-moz-transform','rotate(0deg)');
             scrollArrow.css('transform','rotate(0deg)');
             social_icon.show();
+            $('.background_kontakt').hide();
         }
         
-        //backgroun scale scroll
-        gsap.to( actualBackground, {
-            scrollTrigger: {
-                trigger: "body",
-                endTrigger: ".contact",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: true
-            },
-            scale: "1.05"
-            
-        })
         
         
     }
@@ -115,7 +98,7 @@ $(document).ready(function() {
     main_menu_li = main_menu.find("li");
     
     main_menu_a.on('click', function (event) {
-    
+        
         var a = $(this),
         click_li = a.parent();
         
@@ -136,16 +119,16 @@ $(document).ready(function() {
             
             let content = section.querySelector(".content"); 
             
-            hide(content);
+            hideSection(content);
             
             ScrollTrigger.create({
                 trigger: section,
                 start: "center bottom",
                 end: "center top",
-                onEnter:()=> show(content)||selectNavigation(content),
-                onEnterBack:()=> show(content)||selectNavigation(content),
-                onLeave:()=> hide(content),
-                onLeaveBack:()=> hide(content),
+                onEnter:()=> showSection(content)||selectNavigation(content),
+                onEnterBack:()=> showSection(content)||selectNavigation(content),
+                onLeave:()=> hideSection(content),
+                onLeaveBack:()=> hideSection(content),
                 scrub: false,
                 once: false,
                 //markers: true
@@ -155,36 +138,36 @@ $(document).ready(function() {
     
     //-main content changes
     
-    function hide(cont){
+    function hideSection(cont){
         
         gsap.set(cont, {autoAlpha: 0});
         var newCont = $(cont);
         newCont.find('#moving-part').removeClass('animated-show').addClass('animated-hide');    
     }
     
-    function show(cont){
+    function showSection(cont){
         gsap.set(cont, {autoAlpha: 1});
         
         var newCont = $(cont);
         var contId = cont.getAttribute('id');
         newCont.find('#moving-part').removeClass('animated-hide').addClass('animated-show');
-
-       if(contId == 'kto-som' ){
-           gsap.from(".c-fragment1", 1, {opacity: 0, delay: 0.3, x: 40, ease: "back.out(1)"});
-           gsap.from(".c-fragment2", 1.5, {opacity: 0, delay: 0.4, x: 100, ease: "back.out(1)"});
-           gsap.from(".kto-text_container", 1, {opacity: 0, delay: 0.6, y: 100, ease: "back.out(1)"});
-       }
-       else if (contId == 'moje-prace') {
+        
+        if(contId == 'kto-som' ){
+            gsap.from(".c-fragment1", 1, {opacity: 0, delay: 0.3, x: 40, ease: "back.out(1)"});
+            gsap.from(".c-fragment2", 1.5, {opacity: 0, delay: 0.4, x: 100, ease: "back.out(1)"});
+            gsap.from(".kto-text_container", 1, {opacity: 0, delay: 0.6, y: 100, ease: "back.out(1)"});
+        }
+        else if (contId == 'moje-prace') {
             gsap.from("#moving-port", 1, {opacity: 0, delay: 0.1, x: 100, ease: "back.out(1)", stagger : 0.1});
             gsap.from("#moving-port-footer", 1, {opacity: 0, delay: 0.6, y: 60, ease: "power3.out"});
-       }
-       else if (contId == 'video') {
+        }
+        else if (contId == 'video') {
             gsap.from("#moving-vid", 1, {opacity: 0, x: 100, ease: "back.out(1)", stagger : 0.1});
             gsap.from("#moving-vid-footer", 1, {opacity: 0, delay: 0.6, y: 60, ease: "power3.out"});
-       }
-       else if (contId == 'kontakt') {
+        }
+        else if (contId == 'kontakt') {
             gsap.from(".contact-list_item", 1, {opacity: 0, delay: 0.1, x: 100, ease: "back.out(1)", stagger: {each: 0.15, from: "end"}});
-       }
+        }
     }
     
     let xPercentTitle = 80,
@@ -197,6 +180,27 @@ $(document).ready(function() {
         xPercentTitle = 55;
         xPercentTitle2 = 70; 
     }
+    
+    //backgroun scale scroll
+    gsap.to( (".background_scroll-anim"), {
+        scrollTrigger: {
+            trigger: "body",
+            endTrigger: ".contact",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 2
+        },
+        scale: "1.25",
+        yPercent: .5, // y alebo yPercent--------------------------
+        autoRound: false
+        //ease: "power2.inOut"
+        
+    })
+    
+    
+    
+    
+    
     
     //scroll trigger
     gsap.registerPlugin(ScrollTrigger);
@@ -248,6 +252,6 @@ $(document).ready(function() {
     aspectRatioCalc(asside, aspect_ratio_asside);
     
     aspectRatioCalc(main_menu_container, aspect_ratio_asside);
-    var bottom = $(window).scrollTop() + $(window).height();
+    
     
 });

@@ -580,37 +580,3 @@ li.contact-list_item{
         transition: .3s;
     }
 }
-
-//animated content
-//
-//
-/*
-.animated-show{
-    opacity: 0;
-    animation: showcontent 3s both;
-}
-
-@keyframes showcontent{
-    0%{opacity: 0;}
-    100%{opacity: 1;}
-}
-
-.animated-show.porfolio-section_container{
-    animation-delay: 1s;
-    
-}
-
-.animated-hide{
-    opacity: 0;
-    animation: hidecontent 1s both;
-}
-
-@keyframes hidecontent{
-    0%{opacity: 1;}
-    100%{opacity: 0;}
-}
-
-.animated-show + .kto-text_container{
-    opacity: 1;
-    animation: showcontent 5s both;
-}*/

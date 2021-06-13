@@ -30,13 +30,12 @@ html, body {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: url("../img/Lukas-bg-2100.png");
+    //background-image: url("../img/Lukas-bg-2100.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-color: $main-dark;
-    display: none;
 }
 
 .background{
@@ -51,25 +50,11 @@ html, body {
     
     & .background_kto-som{
         @extend.bg-img;
-        background-image: url("../img/Lukas-bg-2100.png"); 
+        background-image: url("../img/test/bg-test2Ksmall.png"); //zmen aj 4k
         filter: grayscale(100%);
         background-position:50% 0;
     }
-    
-    & .background_moje-prace{
-        @extend.bg-img;
-        background-image: url("../img/Lukas-bg-2100.png");
-        filter: grayscale(100%);
-        background-position:50% 0;
-    }
-    
-    & .background_video{
-        @extend.bg-img;
-        background-image: url("../img/Lukas-bg-2100.png");
-        filter: grayscale(100%);
-        background-position:50% 0;
-    }
-    
+
     & .background_kontakt{
         video{
             position: absolute;
@@ -91,6 +76,21 @@ html, body {
         height: 100%;
         background: linear-gradient(90deg, rgba($main-dark, 0) 30%, rgba($main-dark, 1) 90%);
     }
+}
+
+.background_scroll-anim{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/test/maska\ JA2k.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+    background-position: 30% -5%;
 }
 
 

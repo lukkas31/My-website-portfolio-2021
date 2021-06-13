@@ -574,36 +574,6 @@ li.contact-list_item {
   transition: .3s;
 }
 
-/*
-.animated-show{
-    opacity: 0;
-    animation: showcontent 3s both;
-}
-
-@keyframes showcontent{
-    0%{opacity: 0;}
-    100%{opacity: 1;}
-}
-
-.animated-show.porfolio-section_container{
-    animation-delay: 1s;
-    
-}
-
-.animated-hide{
-    opacity: 0;
-    animation: hidecontent 1s both;
-}
-
-@keyframes hidecontent{
-    0%{opacity: 1;}
-    100%{opacity: 0;}
-}
-
-.animated-show + .kto-text_container{
-    opacity: 1;
-    animation: showcontent 5s both;
-}*/
 .asside-menu_fragment_1 {
   position: fixed;
   left: 4%;
@@ -674,35 +644,6 @@ li.contact-list_item {
   left: 6.5%;
   z-index: 5;
   cursor: pointer;
-}
-
-/*
-.title.title-animation{
-    clip-path: polygon(0 60%, 100% 59%, 100% 64%, 0 64%);
-    animation-timing-function: ease-out;
-    animation: title-animation 3s both;
-}*/
-#Vrstva_1.title-animation {
-  -webkit-clip-path: polygon(0 60%, 100% 59%, 100% 64%, 0 64%);
-          clip-path: polygon(0 60%, 100% 59%, 100% 64%, 0 64%);
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation: title-animation 3s both;
-          animation: title-animation 3s both;
-}
-
-@-webkit-keyframes title-animation {
-  100% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-}
-
-@keyframes title-animation {
-  100% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
 }
 
 .letter_bigl.letters-animation {
@@ -1153,17 +1094,15 @@ svg {
   display: none;
 }
 
-.bg-img, .background .background_kto-som, .background .background_moje-prace, .background .background_video {
+.bg-img, .background .background_kto-som {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: url("../img/Lukas-bg-2100.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-color: #141414;
-  display: none;
 }
 
 .background {
@@ -1175,21 +1114,7 @@ svg {
 }
 
 .background .background_kto-som {
-  background-image: url("../img/Lukas-bg-2100.png");
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-  background-position: 50% 0;
-}
-
-.background .background_moje-prace {
-  background-image: url("../img/Lukas-bg-2100.png");
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-  background-position: 50% 0;
-}
-
-.background .background_video {
-  background-image: url("../img/Lukas-bg-2100.png");
+  background-image: url("../img/test/bg-test2Ksmall.png");
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
   background-position: 50% 0;
@@ -1216,6 +1141,20 @@ svg {
   height: 100%;
   background: -webkit-gradient(linear, left top, right top, color-stop(30%, rgba(20, 20, 20, 0)), color-stop(90%, #141414));
   background: linear-gradient(90deg, rgba(20, 20, 20, 0) 30%, #141414 90%);
+}
+
+.background_scroll-anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/test/maska JA2k.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 30% -5%;
 }
 
 @media only screen and (min-width: 2100px) {
