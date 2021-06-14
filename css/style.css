@@ -1098,7 +1098,6 @@ svg {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -1114,7 +1113,7 @@ svg {
 }
 
 .background .background_kto-som {
-  background-image: url("../img/test/bg-test2Ksmall.png");
+  background-image: url("../img/background_clean2k.png");
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
   background-position: 50% 0;
@@ -1149,12 +1148,11 @@ svg {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../img/test/maska JA2k.png");
-  background-position: center center;
+  background-image: url("../img/maska_JA2k.png");
+  background-position: center -7%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-position: 30% -5%;
 }
 
 @media only screen and (min-width: 2100px) {

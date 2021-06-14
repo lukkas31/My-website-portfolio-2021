@@ -45,7 +45,8 @@ $(document).ready(function() {
     
     //refresh page
     $('.title, .title2').click(function() {
-        location.reload();
+        //location.reload();
+        $(location).attr('href', '');
     });
     //refresh top
     $(window).on('beforeunload', function() {
@@ -190,10 +191,8 @@ $(document).ready(function() {
             end: "bottom bottom",
             scrub: 2
         },
-        scale: "1.25",
-        yPercent: .5, // y alebo yPercent--------------------------
+        scale: "1.2",
         autoRound: false
-        //ease: "power2.inOut"
         
     })
     
