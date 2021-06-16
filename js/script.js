@@ -42,6 +42,23 @@ $(document).ready(function() {
         }
         
     });
+
+    //video lightbox
+    let pLightbox = $('.portfolio-lightbox'),
+        pLightboxBtn = pLightbox.find('.p-lightbox_text_btn'),
+        pBox = $('.portfolio-box');
+
+        pLightbox.hide();
+
+        pBox.on('click', function(event){
+            event.preventDefault();
+
+            pLightbox.show();
+        })
+
+        pLightboxBtn.on('click', function(){
+            pLightbox.hide()
+        })
     
     //refresh page
     $('.title, .title2').click(function() {
@@ -178,6 +195,7 @@ $(document).ready(function() {
         document.addEventListener("DOMContentLoaded", contentHide());
     }else{
         $(".content").css({"opacity":"1", "visibility":"inherit", "position":"relative"});
+        
         xPercentTitle = 55;
         xPercentTitle2 = 70; 
     }

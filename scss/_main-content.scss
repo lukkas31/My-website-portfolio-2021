@@ -254,7 +254,10 @@ article{
         color: rgba(196, 196, 196, .7);
     }
 }
-
+//chybaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//aaaaaaaaaaaaaaaaaaaa
+//aaaaaaaaaaaaa
+//
 .porfolio-section_container{
     height: 2vh;
     width: 100%;
@@ -270,9 +273,152 @@ article{
     }
 }
 
+//portfolio lightbox
 
 
+.portfolio-lightbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $main-dark;
+    background-image: url("../img/portfolio_bg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: 999;
+    //display: none;
 
+    .portfolio-lightbox_inner{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 100%;
+        column-gap: 1.5em;
+        padding: 5%;
+    }
+
+    @media screen and (max-width:800px){
+        .portfolio-lightbox_inner{
+            grid-template-columns: 100%;
+            grid-template-rows: 2fr 2fr;
+            row-gap: 1.5em;
+        }
+    }
+    
+    .portfolio-lightbox_img{ 
+        position: relative;  
+        background-color: grey;
+        width: 100%;
+        height: 100%;
+
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    
+    .portfolio-lightbox_text{
+        padding: 3% 3% 0 3%;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        .p-lightbox_text_web{
+            width: 100%;
+            height: 15%;
+
+            a{
+                font-size: 2.5vh;
+                font-weight: 500;
+                letter-spacing: .2rem;
+                color: rgba($main-text, .4);
+                text-decoration: none;
+            }
+
+            a:hover,
+            a:focus{
+                color: rgba($main-text, .7);
+            }
+        }
+
+        .p-lightbox_text_desc{
+            width: 100%;
+            height: 75%;
+
+            p{
+                font-size: 1.8vh;
+                font-weight: 500;
+                letter-spacing: .2rem;
+                color: rgba($main-text, .7);
+            }
+        }
+
+
+        .p-lightbox_text_btn{
+            width: 100%;
+            height: 10%;
+            background-color: $main-red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p{
+                font-size: 2.5vh;
+                font-weight: 500;
+                letter-spacing: .2rem;
+                color: $main-dark;
+                margin: 0;
+            }
+
+        }
+
+        .p-lightbox_text_btn:hover,
+        .p-lightbox_text_btn:focus{
+            cursor: pointer;
+        }
+    }
+}
+
+/*
+.portfolio-lightbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 999;
+    //padding: 5%;
+
+    .portfolio-lightbox_inner{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: center;
+    }
+    
+    .portfolio-lightbox_img-box{   
+        background-color: grey;
+        width: 60%;
+        height: 85%;
+    }
+
+    
+    .portfolio-lightbox_text-box{
+        background-color: yellow;
+        width: 30%;
+        height: 85%;
+    }
+}
+*/
 
 
 
@@ -483,6 +629,11 @@ article{
         transform: translate(-50%, 0);
         background-color: rgba($main-red, .7);
         vertical-align: middle;
+        /*
+        display: flex;
+            justify-content: center;
+            align-items: center;
+        */
 
         p{
             width: 100%;

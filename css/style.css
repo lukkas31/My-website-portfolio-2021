@@ -259,6 +259,158 @@ article {
   padding-bottom: 1vh;
 }
 
+.portfolio-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #141414;
+  background-image: url("../img/portfolio_bg.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 999;
+}
+
+.portfolio-lightbox .portfolio-lightbox_inner {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+  -webkit-column-gap: 1.5em;
+          column-gap: 1.5em;
+  padding: 5%;
+}
+
+@media screen and (max-width: 800px) {
+  .portfolio-lightbox .portfolio-lightbox_inner {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 2fr 2fr;
+        grid-template-rows: 2fr 2fr;
+    row-gap: 1.5em;
+  }
+}
+
+.portfolio-lightbox .portfolio-lightbox_img {
+  position: relative;
+  background-color: grey;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-lightbox .portfolio-lightbox_img img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.portfolio-lightbox .portfolio-lightbox_text {
+  padding: 3% 3% 0 3%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_web {
+  width: 100%;
+  height: 15%;
+}
+
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_web a {
+  font-size: 2.5vh;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  color: rgba(196, 196, 196, 0.4);
+  text-decoration: none;
+}
+
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_web a:hover,
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_web a:focus {
+  color: rgba(196, 196, 196, 0.7);
+}
+
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_desc {
+  width: 100%;
+  height: 75%;
+}
+
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_desc p {
+  font-size: 1.8vh;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  color: rgba(196, 196, 196, 0.7);
+}
+
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_btn {
+  width: 100%;
+  height: 10%;
+  background-color: #8d0000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_btn p {
+  font-size: 2.5vh;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  color: #141414;
+  margin: 0;
+}
+
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_btn:hover,
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_btn:focus {
+  cursor: pointer;
+}
+
+/*
+.portfolio-lightbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 999;
+    //padding: 5%;
+
+    .portfolio-lightbox_inner{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: center;
+    }
+    
+    .portfolio-lightbox_img-box{   
+        background-color: grey;
+        width: 60%;
+        height: 85%;
+    }
+
+    
+    .portfolio-lightbox_text-box{
+        background-color: yellow;
+        width: 30%;
+        height: 85%;
+    }
+}
+*/
 .video-box {
   position: relative;
   height: 20vh;
@@ -469,6 +621,11 @@ article {
           transform: translate(-50%, 0);
   background-color: rgba(141, 0, 0, 0.7);
   vertical-align: middle;
+  /*
+        display: flex;
+            justify-content: center;
+            align-items: center;
+        */
 }
 
 .video-lightbox .video-lightbox_btn-back p {
@@ -1153,12 +1310,6 @@ svg {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-}
-
-@media only screen and (min-width: 2100px) {
-  .background .background_kto-som {
-    background-image: url("../img/Lukas-bg-4k.jpg");
-  }
 }
 
 .background .background-visible {

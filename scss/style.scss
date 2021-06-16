@@ -9,7 +9,6 @@ html, body {
 
 
 //preloader
-
 .preloader{
     position: fixed;
     background-color: $main-dark;
@@ -30,8 +29,6 @@ html, body {
     width: 100%;
     height: 100%;
     position: absolute;
-    //background-image: url("../img/Lukas-bg-2100.png");
-    //background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -50,7 +47,7 @@ html, body {
     
     & .background_kto-som{
         @extend.bg-img;
-        background-image: url("../img/background_clean2k.png"); //zmen aj 4k
+        background-image: url("../img/background_clean2k.png");
         filter: grayscale(100%);
         background-position:50% 0;
     }
@@ -89,16 +86,8 @@ html, body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    //background-position: 30% -5%;
 }
 
-
-//responsive desktop background 4k
-@media only screen and (min-width: 2100px){
-    .background .background_kto-som{
-        background-image: url("../img/Lukas-bg-4k.jpg");
-    }
-}
 
 .background .background-visible{
     display: block;
