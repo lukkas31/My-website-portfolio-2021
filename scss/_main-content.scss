@@ -44,7 +44,6 @@ article{
     }
 
     article{
-        //border: aqua 1px solid; //vymaž
         margin-top: 20vh;
         align-items: center; 
         
@@ -111,11 +110,17 @@ article{
 }
 .portfolio-box{
     position: relative;
-    height: 20vh; //mobile change
-    //padding-left: 10%;
-    //padding-right: 10%;
+    height: 25vh; //mobile change
     box-shadow: -8px 10px 15px rgba(0, 0, 0, .5);
     overflow: hidden;
+    cursor: pointer;
+
+    .portfolio-link{
+        display: none;
+    }
+    .portfolio-text{
+        display: none;
+    }
 
 }
 
@@ -124,10 +129,10 @@ article{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    //filter: grayscale(100%);
     transform: scale(1.45);
     transition: .5s;
     transition-timing-function: ease-in-out;
+    filter: brightness(90%);
 }
 
 .portfolio-box_asside{
@@ -147,8 +152,6 @@ article{
         width: 100%;
         height: 40%;
         padding: 2% 8%;
-        //border: red 1px solid;
-
     }
 
     h3{
@@ -156,30 +159,28 @@ article{
         width: 100%;
         height: 10%;
         top: 0;
-        font-size: .7vw;
+        font-size: .8vw;
         letter-spacing: .3vw;
         font-weight: 500;
         text-align: center;
-        color: rgba(248, 248, 248, 0.8);
+        color: rgba(248, 248, 248, 1);
         opacity: 0;
         transition: .5s;
         transition-delay: .3s;
-        //border: blue 1px solid;
     }
 
     h4{
         position: relative;
         width: 100%;
         top: 0;
-        font-size: .5vw;
+        font-size: .6vw;
         letter-spacing: .3vw;
         font-weight: 500;
         text-align: center;
-        color: rgba(248, 248, 248, 0.801);
+        color: rgba(248, 248, 248, 1);
         opacity: 0;
         transition: .5s;
         transition-delay: .3s;
-        //border: green 1px solid;
     }
 }
 
@@ -192,7 +193,7 @@ article{
     }
     
     .portfolio-box_cover{
-        filter: grayscale(0%);
+        filter: brightness(100%);
         transform: scale(1.1);
     }
     
@@ -217,7 +218,7 @@ article{
     }
     
     h4,h3{
-        color: rgba(0, 0, 0, 0.8);
+        color: rgba(0, 0, 0, 1);
     }
 }
 .portfolio-box.my-web:hover{
@@ -254,11 +255,8 @@ article{
         color: rgba(196, 196, 196, .7);
     }
 }
-//chybaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-//aaaaaaaaaaaaaaaaaaaa
-//aaaaaaaaaaaaa
-//
-.porfolio-section_container{
+
+.portfolio-section_container{
     height: 2vh;
     width: 100%;
     text-align: left;
@@ -268,14 +266,13 @@ article{
         font-size: .7em;
         font-weight: 500;
         letter-spacing: .2rem;
-        color: rgba(196, 196, 196, 1);
+        color: rgb(219, 219, 219);
         padding-bottom: 1vh;
+        text-shadow: -1px 2px 6px rgba(0, 0, 0, 0.5);
     }
 }
 
 //portfolio lightbox
-
-
 .portfolio-lightbox{
     position: fixed;
     top: 0;
@@ -283,13 +280,11 @@ article{
     width: 100%;
     height: 100%;
     background-color: $main-dark;
-    background-image: url("../img/portfolio_bg.png");
-    background-repeat: no-repeat;
+    background: url("../img/portfolio_bg.png") no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
-    z-index: 999;
-    //display: none;
-
+    z-index: 999;    
+    
     .portfolio-lightbox_inner{
         width: 100%;
         height: 100%;
@@ -299,7 +294,7 @@ article{
         column-gap: 1.5em;
         padding: 5%;
     }
-
+    
     @media screen and (max-width:800px){
         .portfolio-lightbox_inner{
             grid-template-columns: 100%;
@@ -313,6 +308,7 @@ article{
         background-color: grey;
         width: 100%;
         height: 100%;
+        box-shadow: -8px 10px 15px rgba(0, 0, 0, .5);
 
         img{
             position: absolute;
@@ -367,6 +363,7 @@ article{
             display: flex;
             justify-content: center;
             align-items: center;
+            box-shadow: -8px 10px 15px rgba(0, 0, 0, .5);
 
             p{
                 font-size: 2.5vh;
