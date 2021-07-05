@@ -6,6 +6,7 @@ $(document).ready(function() {
     gsap.from(".title", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
     gsap.from(".title2", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
     gsap.from(".social-network .col", 1, {opacity: 0, delay: 0.1, y: -70, ease: "back.out(1)", stagger: {each: 0.15, from: "end"}});
+    gsap.from(".background_scroll-anim", 2.5, { scale: "1.2", ease: "power3.out"});
     let letter = $("path#letter");
 
     letter.delay(300).queue(function(next){
@@ -189,8 +190,8 @@ function showSection(cont){
     newCont.find('#moving-part').removeClass('animated-hide').addClass('animated-show');
     
     if(contId == 'kto-som' ){
-        gsap.from(".c-fragment1", 1, {opacity: 0, delay: 0.3, x: 40, ease: "back.out(1)"});
-        gsap.from(".c-fragment2", 1.5, {opacity: 0, delay: 0.4, x: 100, ease: "back.out(1)"});
+        gsap.from(".c-fragment2", 1, {opacity: 0, delay: 0.3, x: 40, ease: "back.out(1)"});
+        gsap.from(".c-fragment1", 1.5, {opacity: 0, delay: 0.4, x: 100, ease: "back.out(1)"});
         gsap.from(".kto-text_container", 1, {opacity: 0, delay: 0.6, y: 100, ease: "back.out(1)"});
     }
     else if (contId == 'moje-prace') {
@@ -207,15 +208,17 @@ function showSection(cont){
 }
 
 let xPercentTitle = 80,
-xPercentTitle2 = 95; 
+    xPercentTitle2 = 95,
+    secondContainer = $("#main-photo-container"); 
 
 if (window.matchMedia('(min-width: 769px)').matches) {
     document.addEventListener("DOMContentLoaded", contentHide());
+    secondContainer.removeClass('order-first');
 }else{
     $(".content").css({"opacity":"1", "visibility":"inherit", "position":"relative"});
-    
-    xPercentTitle = 55;
-    xPercentTitle2 = 70; 
+    secondContainer.addClass('order-first');
+    xPercentTitle = 50; //55
+    xPercentTitle2 = 55; //70
 }
 
 //backgroun scale scroll
