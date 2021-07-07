@@ -179,15 +179,15 @@ function hideSection(cont){
     
     gsap.set(cont, {autoAlpha: 0});
     var newCont = $(cont);
-    newCont.find('#moving-part').removeClass('animated-show').addClass('animated-hide');    
+    //newCont.find('#moving-part').removeClass('animated-show').addClass('animated-hide');    
 }
 
 function showSection(cont){
     gsap.set(cont, {autoAlpha: 1});
     
-    var newCont = $(cont);
+    //var newCont = $(cont);
     var contId = cont.getAttribute('id');
-    newCont.find('#moving-part').removeClass('animated-hide').addClass('animated-show');
+    //newCont.find('#moving-part').removeClass('animated-hide').addClass('animated-show');
     
     if(contId == 'kto-som' ){
         gsap.from(".c-fragment2", 1, {opacity: 0, delay: 0.3, x: 40, ease: "back.out(1)"});
