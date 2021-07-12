@@ -36,14 +36,11 @@ vLightbox.on('click', function() {
     $(this).hide('fast').find('#videoplay').removeAttr('src');
 });
 
-
-
 $(document).on('keyup', function(event) {
     if ( event.which === 27 ){
         vLightbox.hide('fast').find('#videoplay').removeAttr('src');
         
-    }
-    
+    }   
 });
 
 //portfolio lightbox
@@ -127,9 +124,6 @@ function selectNavigation(content){
         social_icon.show();
         $('.background_kontakt').hide();
     }
-    
-    
-    
 }
 
 //main menu
@@ -137,7 +131,7 @@ let main_menu = $(".menu"),
 main_menu_a = main_menu.find("a"),
 main_menu_li = main_menu.find("li");
 
-main_menu_a.on('click', function (event) {
+main_menu_a.on('click', function () {
     
     var a = $(this),
     click_li = a.parent();
@@ -148,8 +142,6 @@ main_menu_a.on('click', function (event) {
     
     click_li.addClass('selected');
     click_li.siblings('li').removeClass('selected');
-    
-    
 });
 
 // change section on scroll
@@ -174,20 +166,15 @@ function contentHide(){
     })
 }
 
-//-main content changes
-function hideSection(cont){
-    
+//main content changes
+function hideSection(cont){  
     gsap.set(cont, {autoAlpha: 0});
-    var newCont = $(cont);
-    //newCont.find('#moving-part').removeClass('animated-show').addClass('animated-hide');    
 }
 
 function showSection(cont){
     gsap.set(cont, {autoAlpha: 1});
-    
-    //var newCont = $(cont);
+      
     var contId = cont.getAttribute('id');
-    //newCont.find('#moving-part').removeClass('animated-hide').addClass('animated-show');
     
     if(contId == 'kto-som' ){
         gsap.from(".c-fragment2", 1, {opacity: 0, delay: 0.3, x: 40, ease: "back.out(1)"});
@@ -217,8 +204,8 @@ if (window.matchMedia('(min-width: 769px)').matches) {
 }else{
     $(".content").css({"opacity":"1", "visibility":"inherit", "position":"relative"});
     secondContainer.addClass('order-first');
-    xPercentTitle = 50; //55
-    xPercentTitle2 = 55; //70
+    xPercentTitle = 50;
+    xPercentTitle2 = 55;
 }
 
 //backgroun scale scroll
@@ -231,8 +218,7 @@ gsap.to( (".background_scroll-anim"), {
         scrub: 2
     },
     scale: "1.2",
-    autoRound: false
-    
+    autoRound: false  
 })
 
 //scroll trigger
@@ -246,7 +232,6 @@ ScrollTrigger.create({
     end: "100% 80%",
     scrub: 3,
 });
-
 
 scene.from(".title", {
     xPercent: xPercentTitle,

@@ -29,11 +29,7 @@
         position: absolute;
     }
 
-    /*section{
-        position: relative;
-    }*/
-    
-    //background and icons
+    //background and icons mobile
     .content-title-right{
         display: none;
     }
@@ -65,7 +61,7 @@
         display: none;
     }
     
-    //about content
+    //about content mobile
     .content{
         left: 0;
         max-width: 60%;
@@ -96,7 +92,7 @@
         }
     }
 
-    //portfolio content
+    //portfolio content mobile
     #moje{
         article{
             height: 35vh;
@@ -168,7 +164,7 @@
     }
     
 
-    //video content
+    //video content mobile
     #vid{
        article{
            margin-bottom: 8%;
@@ -216,8 +212,13 @@
         color: rgba(196, 196, 196, .7);
        }
 
+       .video-mobile-title{
+           display: table;
+       }
+
     }
 
+    //contact content mobile
     #kont{
         .content{
             max-width: 95%;
@@ -227,6 +228,11 @@
         .contact-list_item_title{
             width: 100%;
             text-align: center;
+
+            h3{
+                color: rgba($main-text, .8);
+                display: none;
+            }
         }
         .contact-list_item_icon{
             display: block;
@@ -235,13 +241,10 @@
             margin-bottom: 8vh;
             
             i{
-                font-size: 8vh;
+                font-size: 6vh;
                 color: rgba($main-text, .8);
             }
 
-            h3{
-                color: rgba($main-text, .8);
-            }
         }
     }
 }

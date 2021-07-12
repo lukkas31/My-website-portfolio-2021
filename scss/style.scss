@@ -117,7 +117,7 @@ html, body {
         background-position: center -240%;
     }
 }
-//social network --------------------------------------
+//social network
 .social-network_fixed-block{
     position: fixed;
     width: 100%;
@@ -141,7 +141,8 @@ html, body {
         transition: .2s;
     }
 
-    a:hover i{
+    a:hover i,
+    a:focus i{
         color: rgba(196, 196, 196, .9);
     }
     
@@ -210,7 +211,7 @@ html, body {
     font-size: .6rem;
 }
 
-//vertical right text---------------------------------------------
+//vertical right text
 .content-title-right{
     position: fixed;
     height: 100%;

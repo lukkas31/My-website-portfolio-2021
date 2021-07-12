@@ -1,7 +1,6 @@
 //asside-----------------------
 //-----------------------------
 //-----------------------------
-//@import 'variables';
 
 //asside block
 .asside-menu_fragment_1{
@@ -256,7 +255,8 @@ svg{
 			transition: .5s;
         }
 
-        &:hover:before{
+        &:hover::before,
+        &:focus::before{
 			transform: scalex(1);
 		}
     }
