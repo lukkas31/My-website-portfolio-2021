@@ -1,6 +1,5 @@
 
 // document ready
-
 $(document).ready(function() {
     $('.preloader').addClass("none");
     gsap.from(".title", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
@@ -17,16 +16,16 @@ $(document).ready(function() {
 
 //video lightbox
 let vLightbox = $('.video-lightbox'),
-vBox = $('.video-box'),
-vBoxBtn = vBox.find('.video-box_play-button');
+    vBox = $('.video-box'),
+    vBoxBtn = vBox.find('.video-box_play-button');
 
+$('.video-lightbox_inner').append('<iframe id="videoplay" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 vLightbox.hide();
 
 vBoxBtn.on('click', function(event){
     event.preventDefault();
-    
     let videoHref = $(this).attr('data-url'),
-    iframe = $('iframe');
+        iframe = $('iframe');
     
     iframe.attr('src', videoHref);
     vLightbox.show();
@@ -84,10 +83,13 @@ $(document).on('keyup', function(e){
 $('.title, .title2').click(function() {
     $(location).attr('href', '');
 });
+
 //refresh top
 $(window).on('beforeunload', function() {
     $(window).scrollTop(0);
 });
+
+
  
 //layout changes  
 function selectNavigation(content){
@@ -149,6 +151,7 @@ function contentHide(){
     gsap.utils.toArray("section.panel").forEach(function(section){
         
         let content = section.querySelector(".content"); 
+        console.log(content);
         
         hideSection(content);
         
@@ -161,9 +164,23 @@ function contentHide(){
             onLeave:()=> hideSection(content),
             onLeaveBack:()=> hideSection(content),
             scrub: false,
-            once: false
+            once: false,
         })
     })
+}
+
+let xPercentTitle = 80,
+    xPercentTitle2 = 95,
+    secondContainer = $("#main-photo-container"); 
+
+if (window.matchMedia('(min-width: 769px)').matches) {
+    document.addEventListener("DOMContentLoaded", contentHide());
+    secondContainer.removeClass('order-first');
+}else{
+    $(".content").css({"opacity":"1", "visibility":"inherit", "position":"relative"});
+    secondContainer.addClass('order-first');
+    xPercentTitle = 50;
+    xPercentTitle2 = 55;
 }
 
 //main content changes
@@ -173,10 +190,10 @@ function hideSection(cont){
 
 function showSection(cont){
     gsap.set(cont, {autoAlpha: 1});
-      
+    
     var contId = cont.getAttribute('id');
     
-    if(contId == 'kto-som' ){
+    if(contId == 'kto-som'){
         gsap.from(".c-fragment2", 1, {opacity: 0, delay: 0.3, x: 40, ease: "back.out(1)"});
         gsap.from(".c-fragment1", 1.5, {opacity: 0, delay: 0.4, x: 100, ease: "back.out(1)"});
         gsap.from(".kto-text_container", 1, {opacity: 0, delay: 0.6, y: 100, ease: "back.out(1)"});
@@ -194,19 +211,6 @@ function showSection(cont){
     }
 }
 
-let xPercentTitle = 80,
-    xPercentTitle2 = 95,
-    secondContainer = $("#main-photo-container"); 
-
-if (window.matchMedia('(min-width: 769px)').matches) {
-    document.addEventListener("DOMContentLoaded", contentHide());
-    secondContainer.removeClass('order-first');
-}else{
-    $(".content").css({"opacity":"1", "visibility":"inherit", "position":"relative"});
-    secondContainer.addClass('order-first');
-    xPercentTitle = 50;
-    xPercentTitle2 = 55;
-}
 
 //backgroun scale scroll
 gsap.to( (".background_scroll-anim"), {
