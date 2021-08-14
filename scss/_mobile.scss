@@ -83,7 +83,7 @@
             
         }
         .content{
-            max-width: 70%;
+            max-width: 80%;
             margin-bottom: 15%;
         }
         
@@ -91,6 +91,19 @@
             width: 90%;
             min-height: 29vh;
         }
+
+        footer{
+            p{
+                font-size: 2.1vh;
+                font-weight: 300;
+                color: rgba(206, 206, 206, 1);
+            }
+            h4{
+                color: rgba(206, 206, 206, 1);
+                font-size: 2.8vh;
+                font-weight: 300;
+            }
+        } 
     }
 
     //portfolio content mobile

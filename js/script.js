@@ -89,11 +89,8 @@ $(window).on('beforeunload', function() {
     $(window).scrollTop(0);
 });
 
-
- 
 //layout changes  
 function selectNavigation(content){
-    
     
     let actualContentId = content.getAttribute('id'),
         menu = $('.menu'),
@@ -117,14 +114,18 @@ function selectNavigation(content){
         scrollArrow.css('-moz-transform','rotate(180deg)');
         scrollArrow.css('transform','rotate(180deg)');
         social_icon.hide();
-        $('.background_kontakt').show();
+        //$('.background_kontakt').show();
+        $('.background_kontakt').css('display', 'block');
+        $('.background_kontakt').addClass('contact-anim_show');
     }
     else{
         scrollArrow.css('-webkit-transform','rotate(0deg)');
         scrollArrow.css('-moz-transform','rotate(0deg)');
         scrollArrow.css('transform','rotate(0deg)');
         social_icon.show();
-        $('.background_kontakt').hide();
+        //$('.background_kontakt').hide();
+        $('.background_kontakt').css('display', 'none');
+        $('.background_kontakt').removeClass('contact-anim_show');
     }
 }
 
@@ -151,7 +152,6 @@ function contentHide(){
     gsap.utils.toArray("section.panel").forEach(function(section){
         
         let content = section.querySelector(".content"); 
-        console.log(content);
         
         hideSection(content);
         

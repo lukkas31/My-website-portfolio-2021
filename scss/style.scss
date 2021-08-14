@@ -17,7 +17,34 @@ html, body {
     top: 0;
     left: 0;
     z-index: 9999;
+
+    .loading{
+        position: absolute;
+        width: 15vh;
+        height: 15vh;
+        background-color: rgba($main_red, .3);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        clip-path: polygon(100% 0, 25% 50%, 100% 100%);
+        animation: loading_bounce 2s ease-out infinite;
+
+        &.back{
+            background-color: rgba($main_red, .5);
+            animation: loading_bounce 2s ease-out infinite;
+            animation-delay: .25s;
+        }
+    }
 }
+
+@keyframes loading_bounce {
+    0% {left:58%; opacity:0}
+    5% {opacity:0}
+    10% {opacity: 1}
+    99% {opacity: 1}
+    100% {left:45%; opacity: 0} 
+}
+
 
 .none{
     display: none;
@@ -62,6 +89,14 @@ html, body {
 		    object-fit: cover;
             filter: grayscale(100%);
         }
+    }
+    .contact-anim_show{
+        clip-path: polygon(0 0, 15% 0, 0 100%, 0% 100%);
+        animation: contact-anim_show .6s both;
+    }
+
+    @keyframes contact-anim_show {   
+        100% {clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);}
     }
     
     &::after{
