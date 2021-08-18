@@ -75,7 +75,7 @@ article{
         background-repeat: no-repeat;
         background-size: cover;
         background-color: $main-dark;
-        filter: grayscale(90%);
+        filter: grayscale(60%);
     }
     
     .photo-fragment1{
@@ -345,7 +345,7 @@ article{
     
     .portfolio-lightbox_img{ 
         position: relative;  
-        background-color: grey;
+        background-color: $main-dark;
         width: 100%;
         height: 100%;
         box-shadow: -8px 10px 15px rgba(0, 0, 0, .5);
@@ -355,6 +355,13 @@ article{
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .portfolio_preloader{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $main-dark;
         }
     }
 

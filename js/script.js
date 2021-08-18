@@ -1,17 +1,20 @@
 
 // document ready
 $(document).ready(function() {
-    $('.preloader').addClass("none");
-    gsap.from(".title", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
-    gsap.from(".title2", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
-    gsap.from(".social-network .col", 1, {opacity: 0, delay: 0.1, y: -70, ease: "back.out(1)", stagger: {each: 0.15, from: "end"}});
-    gsap.from(".background_scroll-anim", 2.5, { scale: "1.2", ease: "power3.out"});
-    let letter = $("path#letter");
-
-    letter.delay(300).queue(function(next){
-        $(this).addClass("letters-animation");
-        next();
+    $(window).on('load', function(){
+        $('.preloader').addClass("none");
+        gsap.from(".title", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
+        gsap.from(".title2", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
+        gsap.from(".social-network .col", 1, {opacity: 0, delay: 0.1, y: -70, ease: "back.out(1)", stagger: {each: 0.15, from: "end"}});
+        gsap.from(".background_scroll-anim", 2.5, { scale: "1.2", ease: "power3.out"});
+        let letter = $("path#letter");
+        
+        letter.delay(300).queue(function(next){
+            $(this).addClass("letters-animation");
+            next();
+        });
     });
+        
 });
 
 //video lightbox
@@ -58,7 +61,10 @@ pBox.on('click', function(event){
         portfolioText = $(this).find('.portfolio-text').html();
 
     //new portfolio lightbox
-    pLightbox.find('img').attr('src', portfolioImgAttr);
+    pLightbox.find('img').attr('src', portfolioImgAttr).on('load', function() {
+        $('.portfolio_preloader').css('display', 'none');
+    });
+    //pLightbox.find('img').attr('src', portfolioImgAttr);
     pLightbox.find('.p-lightbox_text_web').html(portfolioLink);
     pLightbox.find('.p-lightbox_text_desc').html(portfolioText);
 
@@ -70,12 +76,12 @@ pBox.on('click', function(event){
 })
 
 pLightboxBtn.on('click', function(){
-    pLightbox.hide();
+    pLightbox.hide().find('img').removeAttr('src');
 })
 
 $(document).on('keyup', function(e){
     if( e.which === 27){
-        pLightbox.hide();
+        pLightbox.hide().find('img').removeAttr('src');
     }
 })
 
@@ -265,9 +271,9 @@ function aspectRatioCalc(object, aspectRatio){
         object.width( object.height() / aspectRatio );
     });
     
-    jQuery(window).resize(function() {
+    /*jQuery(window).resize(function() {
         object.width( object.height() / aspectRatio );
-    });
+    });*/
 }
 
 aspectRatioCalc(asside, aspect_ratio_asside);

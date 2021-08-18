@@ -18,22 +18,22 @@ html, body {
     left: 0;
     z-index: 9999;
 
-    .loading{
-        position: absolute;
-        width: 15vh;
-        height: 15vh;
-        background-color: rgba($main_red, .3);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        clip-path: polygon(100% 0, 25% 50%, 100% 100%);
-        animation: loading_bounce 2s ease-out infinite;
+}
+.loading{
+    position: absolute;
+    width: 15vh;
+    height: 15vh;
+    background-color: rgba($main_red, .3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    clip-path: polygon(100% 0, 25% 50%, 100% 100%);
+    animation: loading_bounce 2s ease-out infinite;
 
-        &.back{
-            background-color: rgba($main_red, .5);
-            animation: loading_bounce 2s ease-out infinite;
-            animation-delay: .25s;
-        }
+    &.back{
+        background-color: rgba($main_red, .5);
+        animation: loading_bounce 2s ease-out infinite;
+        animation-delay: .25s;
     }
 }
 
