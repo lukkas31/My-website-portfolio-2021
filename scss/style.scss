@@ -171,14 +171,14 @@ html, body {
     
     
     i{
-        color: rgba(196, 196, 196, .4);
+        color: rgba(196, 196, 196, .5);
         font-size: .9rem;
         transition: .2s;
     }
 
     a:hover i,
     a:focus i{
-        color: rgba(196, 196, 196, .9);
+        color: rgba(196, 196, 196, 1);
     }
     
 
@@ -193,9 +193,9 @@ html, body {
 //scroll arrow
 .scroll-container{
     position: fixed;
-    bottom: 1%;
+    bottom: .1%;
     width: 100%;
-    height: 30px;
+    height: 25px;
     
     .scroll{
         width: 30%;
@@ -207,7 +207,7 @@ html, body {
             position: relative;
             top: 1%;
             height: 25%;
-            fill: rgba(196, 196, 196, .4);
+            fill: rgba(196, 196, 196, .2);
             transform: rotate(0deg);
             animation: arrow_bounce 2s ease-in-out infinite;
         }

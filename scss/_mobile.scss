@@ -6,11 +6,14 @@
         background-image:  image-set( 
             url("../img/Lukas-bgmobile-800_2.png") 1x,
             url("../img/Lukas-bgmobile-1600_2.png") 2x,
-          );
+            );
         background-position: 15% 0;
+        background-size: auto;
+        background-attachment: fixed;
+        background-color: $main-dark;
     }
 }
-
+        
 
 @media only screen and (max-width: 550px){
     //asside menu media queries
@@ -79,7 +82,7 @@
             margin-top: 25vh;
         }  
         #main-photo-container{
-            margin-top: 3vh;
+            margin-top: 4.5vh;
             
         }
         .content{
@@ -97,6 +100,7 @@
                 font-size: 2.1vh;
                 font-weight: 300;
                 color: rgba(206, 206, 206, 1);
+                letter-spacing: .1vh;
             }
             h4{
                 color: rgba(206, 206, 206, 1);
@@ -108,6 +112,11 @@
 
     //portfolio content mobile
     #moje{
+        .content{
+            max-width: 70%;
+            margin-bottom: 20%;
+        }
+
         article{
             height: 35vh;
             margin-bottom: 10%;
@@ -119,6 +128,10 @@
         .portfolio-section_container{
             height: 3vh;
             margin-top: 5vh;
+
+            p{
+                font-size: .9em;
+            }
 
         }
 
@@ -176,6 +189,15 @@
             }
         }
     }
+
+    .portfolio-lightbox .portfolio-lightbox_text{
+        .p-lightbox_text_desc{
+            height: 75%;
+        }
+        .p-lightbox_text_btn_container{
+            height: 15%;
+        }
+    }
     
 
     //video content mobile
@@ -185,7 +207,7 @@
        }
 
        .content{
-           max-width: 75%;
+           max-width: 80%;
            margin-bottom: 20%;
        }
 
@@ -228,6 +250,10 @@
 
        .video-mobile-title{
            display: table;
+
+           p{
+               font-size: .9em;
+           }
        }
 
     }

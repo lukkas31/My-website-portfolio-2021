@@ -98,7 +98,7 @@ article {
 
 .kto-text_container {
   min-height: 20vh;
-  padding: 2% 1% 0 1%;
+  padding: 1% 1% 0 1%;
 }
 
 .kto-text_container p {
@@ -115,6 +115,7 @@ article {
   font-weight: 300;
   letter-spacing: .3vh;
   text-align: center;
+  margin-bottom: 4px;
 }
 
 @media only screen and (max-width: 1130px) {
@@ -385,7 +386,7 @@ article {
 
 .portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_web {
   width: 100%;
-  height: 20%;
+  height: 10%;
   text-align: center;
 }
 
@@ -397,15 +398,6 @@ article {
   text-decoration: none;
 }
 
-.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_web span {
-  font-size: 1.5vh;
-  font-weight: 300;
-  letter-spacing: .2rem;
-  color: rgba(196, 196, 196, 0.4);
-  height: 1.8vh;
-  display: block;
-}
-
 .portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_web a:hover,
 .portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_web a:focus {
   color: rgba(196, 196, 196, 0.7);
@@ -413,7 +405,7 @@ article {
 
 .portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_desc {
   width: 100%;
-  height: 70%;
+  height: 80%;
 }
 
 .portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_desc p {
@@ -427,10 +419,24 @@ article {
   font-weight: 500;
 }
 
-.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_btn {
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_btn_container {
   width: 100%;
   height: 10%;
-  background-color: #8d0000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_btn {
+  width: 49%;
+  height: 100%;
+  background-color: rgba(141, 0, 0, 0.7);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -452,9 +458,36 @@ article {
   margin: 0;
 }
 
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_btn a {
+  font-size: 2.5vh;
+  letter-spacing: .2rem;
+  font-weight: 500;
+  color: #141414;
+  margin: 0;
+  text-decoration: none;
+}
+
+.portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_btn a i {
+  font-size: 2.5vh;
+  letter-spacing: .2rem;
+  color: #141414;
+  margin-left: 5px;
+}
+
+.portfolio-lightbox .portfolio-lightbox_text .btn_visit {
+  width: 67%;
+}
+
+.portfolio-lightbox .portfolio-lightbox_text .btn_back {
+  width: 29%;
+}
+
 .portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_btn:hover,
 .portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_btn:focus {
   cursor: pointer;
+  background-color: rgba(141, 0, 0, 0.9);
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .video-mobile-title {
@@ -749,11 +782,11 @@ ul.contact-list a {
 }
 
 ul.contact-list a:hover h3 {
-  color: rgba(196, 196, 196, 0.7);
+  color: rgba(196, 196, 196, 0.8);
 }
 
 ul.contact-list a:hover i {
-  color: rgba(196, 196, 196, 0.7);
+  color: rgba(196, 196, 196, 0.8);
 }
 
 li.contact-list_item {
@@ -767,7 +800,7 @@ li.contact-list_item {
 
 .contact-list_item_title h3 {
   font-size: 2.5vh;
-  color: rgba(196, 196, 196, 0.4);
+  color: rgba(196, 196, 196, 0.6);
   letter-spacing: .2em;
   font-weight: 300;
   text-decoration: none;
@@ -1241,7 +1274,7 @@ svg {
   font-weight: 500;
   letter-spacing: .2rem;
   padding-right: .6rem;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .main-menu a::before {
@@ -1250,7 +1283,7 @@ svg {
   display: block;
   width: .3rem;
   height: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   top: 50%;
   right: 0%;
   -webkit-transform: translate(0, -50%);
@@ -1517,7 +1550,7 @@ svg {
 }
 
 .social-network i {
-  color: rgba(196, 196, 196, 0.4);
+  color: rgba(196, 196, 196, 0.5);
   font-size: .9rem;
   -webkit-transition: .2s;
   transition: .2s;
@@ -1525,7 +1558,7 @@ svg {
 
 .social-network a:hover i,
 .social-network a:focus i {
-  color: rgba(196, 196, 196, 0.9);
+  color: #c4c4c4;
 }
 
 @media only screen and (min-width: 2500px) {
@@ -1536,9 +1569,9 @@ svg {
 
 .scroll-container {
   position: fixed;
-  bottom: 1%;
+  bottom: .1%;
   width: 100%;
-  height: 30px;
+  height: 25px;
 }
 
 .scroll-container .scroll {
@@ -1552,7 +1585,7 @@ svg {
   position: relative;
   top: 1%;
   height: 25%;
-  fill: rgba(196, 196, 196, 0.4);
+  fill: rgba(196, 196, 196, 0.2);
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   -webkit-animation: arrow_bounce 2s ease-in-out infinite;
@@ -1711,6 +1744,9 @@ svg {
     background-image: -webkit-image-set(url("../img/Lukas-bgmobile-800_2.png") 1x, url("../img/Lukas-bgmobile-1600_2.png") 2x);
     background-image: image-set(url("../img/Lukas-bgmobile-800_2.png") 1x, url("../img/Lukas-bgmobile-1600_2.png") 2x);
     background-position: 15% 0;
+    background-size: auto;
+    background-attachment: fixed;
+    background-color: #141414;
   }
 }
 
@@ -1766,7 +1802,7 @@ svg {
     margin-top: 25vh;
   }
   #kto #main-photo-container {
-    margin-top: 3vh;
+    margin-top: 4.5vh;
   }
   #kto .content {
     max-width: 80%;
@@ -1780,11 +1816,16 @@ svg {
     font-size: 2.1vh;
     font-weight: 300;
     color: #cecece;
+    letter-spacing: .1vh;
   }
   #kto footer h4 {
     color: #cecece;
     font-size: 2.8vh;
     font-weight: 300;
+  }
+  #moje .content {
+    max-width: 70%;
+    margin-bottom: 20%;
   }
   #moje article {
     height: 35vh;
@@ -1796,6 +1837,9 @@ svg {
   #moje .portfolio-section_container {
     height: 3vh;
     margin-top: 5vh;
+  }
+  #moje .portfolio-section_container p {
+    font-size: .9em;
   }
   #moje .portfolio-button_container a {
     color: rgba(196, 196, 196, 0.7);
@@ -1842,11 +1886,17 @@ svg {
   #moje .portfolio-box.my-web h4, #moje .portfolio-box.my-web h3 {
     color: #c4c4c4;
   }
+  .portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_desc {
+    height: 75%;
+  }
+  .portfolio-lightbox .portfolio-lightbox_text .p-lightbox_text_btn_container {
+    height: 15%;
+  }
   #vid article {
     margin-bottom: 8%;
   }
   #vid .content {
-    max-width: 75%;
+    max-width: 80%;
     margin-bottom: 20%;
   }
   #vid .video-box {
@@ -1885,6 +1935,9 @@ svg {
   }
   #vid .video-mobile-title {
     display: table;
+  }
+  #vid .video-mobile-title p {
+    font-size: .9em;
   }
   #kont .content {
     max-width: 95%;

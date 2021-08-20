@@ -100,7 +100,7 @@ article{
 
 .kto-text_container{
     min-height: 20vh;
-    padding: 2% 1% 0 1%;
+    padding: 1% 1% 0 1%;
 
     p{
         text-align: justify;
@@ -116,6 +116,7 @@ article{
         font-weight: 300;
         letter-spacing: .3vh;
         text-align: center;
+        margin-bottom: 4px;
     }
     
 }
@@ -374,7 +375,7 @@ article{
 
         .p-lightbox_text_web{
             width: 100%;
-            height: 20%;
+            height: 10%;
             text-align: center;
             
             a{
@@ -385,16 +386,6 @@ article{
                 text-decoration: none;
             }
 
-            span{
-                font-size: 1.5vh;
-                font-weight: 300;
-                letter-spacing: .2rem;
-                color: rgba($main-text, .4);
-                height: 1.8vh;
-                display: block;
-
-            }
-
             a:hover,
             a:focus{
                 color: rgba($main-text, .7);
@@ -403,7 +394,7 @@ article{
 
         .p-lightbox_text_desc{
             width: 100%;
-            height: 70%;
+            height: 80%;
 
             p{
                 font-size: 1.6vh;
@@ -417,11 +408,17 @@ article{
             }
         }
 
-
-        .p-lightbox_text_btn{
+        .p-lightbox_text_btn_container{
             width: 100%;
             height: 10%;
-            background-color: $main-red;
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+        }
+        .p-lightbox_text_btn{
+            width: 49%;
+            height: 100%;
+            background-color: rgba($main-red, .7);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -435,11 +432,37 @@ article{
                 margin: 0;
             }
 
+            a{
+                font-size: 2.5vh;
+                letter-spacing: .2rem;
+                font-weight: 500;
+                color: $main-dark;
+                margin: 0;
+                text-decoration: none;
+                
+                i{
+                    font-size: 2.5vh;
+                    letter-spacing: .2rem;
+                    color: $main-dark;
+                    margin-left: 5px; 
+                }
+            }
+
+            
+        }
+        .btn_visit{
+            width: 67%;
+        }
+
+        .btn_back{
+            width: 29%;
         }
 
         .p-lightbox_text_btn:hover,
         .p-lightbox_text_btn:focus{
             cursor: pointer;
+            background-color: rgba($main-red, .9);
+            transition: .2s;
         }
     }
 }
@@ -722,10 +745,10 @@ ul.contact-list{
 
     a:hover{
         h3{
-            color: rgba($main-text, .7);
+            color: rgba($main-text, .8);
         }
         i{
-            color: rgba($main-text, .7);
+            color: rgba($main-text, .8);
         }
         
     }
@@ -742,7 +765,7 @@ li.contact-list_item{
     h3{
 
         font-size: 2.5vh;
-        color: rgba($main-text, .4);
+        color: rgba($main-text, .6);
         letter-spacing: .2em;
         font-weight: 300;
         text-decoration: none;

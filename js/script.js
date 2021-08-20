@@ -2,13 +2,16 @@
 // document ready
 $(document).ready(function() {
     $(window).on('load', function(){
-        $('.preloader').addClass("none");
+        let letter = $("path#letter"),
+            preloader = $('.preloader');
+
+        preloader.addClass("none");
+            
         gsap.from(".title", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
         gsap.from(".title2", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
         gsap.from(".social-network .col", 1, {opacity: 0, delay: 0.1, y: -70, ease: "back.out(1)", stagger: {each: 0.15, from: "end"}});
         gsap.from(".background_scroll-anim", 2.5, { scale: "1.2", ease: "power3.out"});
-        let letter = $("path#letter");
-        
+            
         letter.delay(300).queue(function(next){
             $(this).addClass("letters-animation");
             next();
@@ -47,7 +50,7 @@ $(document).on('keyup', function(event) {
 
 //portfolio lightbox
 let pLightbox = $('.portfolio-lightbox'),
-    pLightboxBtn = pLightbox.find('.p-lightbox_text_btn'),
+    pLightboxBtn = pLightbox.find('.btn_back'),
     pBox = $('.portfolio-box');
 
 pLightbox.hide();
@@ -57,6 +60,7 @@ pBox.on('click', function(event){
 
     var portfolioImg = $(this).find('img'),
         portfolioImgAttr = portfolioImg.attr('data-url'),
+        portfolioVisitAttr = $(this).find('a').attr('href'),
         portfolioLink = $(this).find('.portfolio-link').html(),
         portfolioText = $(this).find('.portfolio-text').html();
 
@@ -64,7 +68,7 @@ pBox.on('click', function(event){
     pLightbox.find('img').attr('src', portfolioImgAttr).on('load', function() {
         $('.portfolio_preloader').css('display', 'none');
     });
-    //pLightbox.find('img').attr('src', portfolioImgAttr);
+    pLightbox.find('.btn_visit a').attr('href', portfolioVisitAttr);
     pLightbox.find('.p-lightbox_text_web').html(portfolioLink);
     pLightbox.find('.p-lightbox_text_desc').html(portfolioText);
 
@@ -120,7 +124,6 @@ function selectNavigation(content){
         scrollArrow.css('-moz-transform','rotate(180deg)');
         scrollArrow.css('transform','rotate(180deg)');
         social_icon.hide();
-        //$('.background_kontakt').show();
         $('.background_kontakt').css('display', 'block');
         $('.background_kontakt').addClass('contact-anim_show');
     }
@@ -129,7 +132,6 @@ function selectNavigation(content){
         scrollArrow.css('-moz-transform','rotate(0deg)');
         scrollArrow.css('transform','rotate(0deg)');
         social_icon.show();
-        //$('.background_kontakt').hide();
         $('.background_kontakt').css('display', 'none');
         $('.background_kontakt').removeClass('contact-anim_show');
     }
@@ -271,9 +273,11 @@ function aspectRatioCalc(object, aspectRatio){
         object.width( object.height() / aspectRatio );
     });
     
-    /*jQuery(window).resize(function() {
-        object.width( object.height() / aspectRatio );
-    });*/
+    if (window.matchMedia('(min-width: 550px)').matches) {
+        jQuery(window).resize(function() {
+            object.width( object.height() / aspectRatio );
+        });
+    }
 }
 
 aspectRatioCalc(asside, aspect_ratio_asside);
