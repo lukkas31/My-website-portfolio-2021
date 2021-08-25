@@ -1,24 +1,21 @@
 
 // document ready
-$(document).ready(function() {
-    $(window).on('load', function(){
-        let letter = $("path#letter"),
-            preloader = $('.preloader');
+var loader = document.getElementsByClassName("preloader");
 
-        preloader.addClass("none");
-            
-        gsap.from(".title", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
-        gsap.from(".title2", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
-        gsap.from(".social-network .col", 1, {opacity: 0, delay: 0.1, y: -70, ease: "back.out(1)", stagger: {each: 0.15, from: "end"}});
-        gsap.from(".background_scroll-anim", 2.5, { scale: "1.2", ease: "power3.out"});
-            
-        letter.delay(300).queue(function(next){
-            $(this).addClass("letters-animation");
-            next();
-        });
+window.addEventListener('load', function(){
+    loader[0].style.display = "none";
+
+    let letter = $("path#letter");
+    letter.delay(200).queue(function(next){
+        $(this).addClass("letters-animation");
+        next();
     });
-        
-});
+
+    gsap.from(".title", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
+    gsap.from(".title2", 1, {opacity: 0, delay: 0.3, x: -30, ease: "back.out(1)"});
+    gsap.from(".social-network .col", 1, {opacity: 0, delay: 0.1, y: -70, ease: "back.out(1)", stagger: {each: 0.15, from: "end"}});
+    gsap.from(".background_scroll-anim", 2.5, { scale: "1.2", ease: "power3.out"});
+})
 
 //video lightbox
 let vLightbox = $('.video-lightbox'),
@@ -220,7 +217,7 @@ function showSection(cont){
 }
 
 
-//backgroun scale scroll
+//background scale scroll
 gsap.to( (".background_scroll-anim"), {
     scrollTrigger: {
         trigger: "body",

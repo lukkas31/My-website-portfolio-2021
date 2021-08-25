@@ -32,11 +32,12 @@ article {
 }
 
 #kto .content {
-  max-width: 50%;
+  max-width: 57%;
+  left: 28%;
 }
 
 #kto article {
-  margin-top: 20vh;
+  margin-top: 10vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -56,7 +57,7 @@ article {
 .kto-img_inner .kto-img_container {
   position: absolute;
   top: 0;
-  width: 80%;
+  width: 70%;
   min-height: 33vh;
   -webkit-filter: drop-shadow(-8px 6px 7px rgba(0, 0, 0, 0.4));
   filter: drop-shadow(-8px 6px 7px rgba(0, 0, 0, 0.4));
@@ -71,8 +72,8 @@ article {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #141414;
-  -webkit-filter: grayscale(60%);
-          filter: grayscale(60%);
+  -webkit-filter: grayscale(50%);
+          filter: grayscale(50%);
 }
 
 .kto-img_inner .photo-fragment1 {
@@ -98,24 +99,24 @@ article {
 
 .kto-text_container {
   min-height: 20vh;
-  padding: 1% 1% 0 1%;
+  padding: 3% 1% 0 1%;
 }
 
 .kto-text_container p {
   text-align: justify;
   color: rgba(167, 167, 167, 0.9);
-  font-size: 1.6vh;
+  font-size: 1.8vh;
   letter-spacing: .2vh;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .kto-text_container h4 {
   color: rgba(167, 167, 167, 0.9);
   font-size: 2.8vh;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: .3vh;
   text-align: center;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 @media only screen and (max-width: 1130px) {
@@ -879,7 +880,7 @@ li.contact-list_item {
   text-align: left;
   width: 18%;
   position: fixed;
-  bottom: 49%;
+  bottom: 53%;
   left: 5%;
   z-index: 5;
   cursor: pointer;
@@ -889,7 +890,7 @@ li.contact-list_item {
   text-align: left;
   width: 18%;
   position: fixed;
-  top: 49%;
+  top: 45%;
   left: 6.5%;
   z-index: 5;
   cursor: pointer;
@@ -1253,7 +1254,7 @@ svg {
 
 .main-menu .main-menu_inner {
   position: absolute;
-  bottom: 63%;
+  bottom: 67%;
   right: 0;
   padding: 0;
   margin: 0;
@@ -1274,7 +1275,7 @@ svg {
   font-weight: 500;
   letter-spacing: .2rem;
   padding-right: .6rem;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .main-menu a::before {
@@ -1550,7 +1551,7 @@ svg {
 }
 
 .social-network i {
-  color: rgba(196, 196, 196, 0.5);
+  color: rgba(196, 196, 196, 0.8);
   font-size: .9rem;
   -webkit-transition: .2s;
   transition: .2s;
@@ -1571,7 +1572,7 @@ svg {
   position: fixed;
   bottom: .1%;
   width: 100%;
-  height: 25px;
+  height: 30px;
 }
 
 .scroll-container .scroll {
@@ -1809,6 +1810,7 @@ svg {
   #kto .content {
     max-width: 80%;
     margin-bottom: 15%;
+    left: 0;
   }
   #kto .kto-img_container {
     width: 90%;

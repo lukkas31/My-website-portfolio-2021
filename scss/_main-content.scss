@@ -39,11 +39,12 @@ article{
 
 #kto{
     .content{
-        max-width: 50%;
+        max-width: 57%;//50
+        left: 28%;
     }
 
     article{
-        margin-top: 20vh;
+        margin-top: 10vh; //20
         align-items: center; 
         
     }   
@@ -60,7 +61,7 @@ article{
     .kto-img_container{
         position: absolute;
         top: 0;
-        width: 80%;
+        width: 70%;
         min-height: 33vh; 
         -webkit-filter: drop-shadow( -8px 6px 7px rgba(0, 0, 0, .4));
         filter: drop-shadow( -8px 6px 7px rgba(0, 0, 0, .4));
@@ -75,7 +76,7 @@ article{
         background-repeat: no-repeat;
         background-size: cover;
         background-color: $main-dark;
-        filter: grayscale(60%);
+        filter: grayscale(50%);
     }
     
     .photo-fragment1{
@@ -100,23 +101,23 @@ article{
 
 .kto-text_container{
     min-height: 20vh;
-    padding: 1% 1% 0 1%;
+    padding: 3% 1% 0 1%;
 
     p{
         text-align: justify;
         color: rgba(167, 167, 167, 0.9);
-        font-size: 1.6vh;
+        font-size: 1.8vh;
         letter-spacing: .2vh;
-        font-weight: 300;
+        font-weight: 400;
     }
 
     h4{
         color: rgba(167, 167, 167, 0.9);
         font-size: 2.8vh;
-        font-weight: 300;
+        font-weight: 400;
         letter-spacing: .3vh;
         text-align: center;
-        margin-bottom: 4px;
+        margin-bottom: 8px;
     }
     
 }
