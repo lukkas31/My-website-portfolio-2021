@@ -278,6 +278,14 @@ article {
   color: #c4c4c4;
 }
 
+.portfolio-box.baja-web:hover .portfolio-box_asside {
+  background-color: rgba(60, 196, 151, 0.7);
+}
+
+.portfolio-box.baja-web:hover h4, .portfolio-box.baja-web:hover h3 {
+  color: black;
+}
+
 .portfolio-button_container {
   height: 3vh;
   width: 100%;
@@ -1763,8 +1771,13 @@ svg {
   .main-menu {
     display: none;
   }
-  .title,
+  .title {
+    bottom: 50%;
+    width: 40%;
+    position: absolute;
+  }
   .title2 {
+    top: 49%;
     width: 40%;
     position: absolute;
   }

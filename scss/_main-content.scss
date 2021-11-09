@@ -273,6 +273,16 @@ article{
     }
 }
 
+.portfolio-box.baja-web:hover{
+    .portfolio-box_asside{
+        background-color: rgba(60, 196, 151, .7);
+    }
+    
+    h4,h3{
+        color: rgba(0, 0, 0, 1);;
+    }
+}
+
 
 
 

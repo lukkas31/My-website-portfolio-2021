@@ -28,8 +28,14 @@
         display: none;
     }
     
-    .title,
+    .title{
+        bottom: 50%;
+        width: 40%;
+        position: absolute;
+    }
+
     .title2{
+        top: 49%;
         width: 40%;
         position: absolute;
     }
