@@ -177,8 +177,8 @@ function contentHide(){
 let xPercentTitle = 80,
     xPercentTitle2 = 95,
     secondContainer = $("#main-photo-container"); 
-
-if (window.matchMedia('(min-width: 769px)').matches) {
+//769px
+if (window.matchMedia('(min-width: 991px)').matches) {
     document.addEventListener("DOMContentLoaded", contentHide());
     secondContainer.removeClass('order-first');
 }else{

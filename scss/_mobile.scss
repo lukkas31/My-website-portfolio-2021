@@ -1,24 +1,24 @@
 @import 'variables';
 
 // responsive mobile background
-@media only screen and (max-width: 550px){
+@media only screen and (max-width: 991px){
     .background .background_kto-som{
-        background-image:  image-set( 
+        /*background-image:  image-set( 
             url("../img/Lukas-bgmobile-800_2.png") 1x,
             url("../img/Lukas-bgmobile-1600_2.png") 2x,
-            );
-        background-position: 15% 0;
+            );*/
+        background-image: url("../img/Lukas-bgmobile-1600_2.png");
+        background-position: center 40%;
         background-size: auto;
         background-attachment: fixed;
         background-color: $main-dark;
         transform: scale(1.3);
     }
 }
-        
 
-@media only screen and (max-width: 550px){
-    //asside menu media queries
-    .asside-menu{
+@media (min-width: 420px) and (max-width: 991px){
+     //asside menu media queries
+     .asside-menu{
         height: 100%;
         left: 0;
         transform: translate(-30%);
@@ -38,6 +38,333 @@
         top: 49%;
         width: 40%;
         position: absolute;
+    }
+
+    //background and icons mobile
+    .content-title-right{
+        display: none;
+    }
+    
+    .background::after{
+        display: none;
+    }
+
+    .background_kontakt{
+        display: none;
+    }
+    
+    .background_scroll-anim{
+        display: none;
+    }
+
+    .social-network_fixed-block{
+        display: none;
+    }
+    
+    .copyright_text{
+        writing-mode: horizontal-tb;
+        position: relative;
+        text-align: right;
+        
+    }
+    
+    .scroll-container{
+        display: none;
+    }
+    
+    //about content mobile
+    .content{
+        left: 0;
+        max-width: 60%;
+        margin-bottom: 30%;
+    }
+
+    .panel{
+       min-height: 400px; 
+    }
+
+    #kto{
+
+        article{
+            margin-top: 25vh;
+        }
+
+        #main-photo-container{
+            margin-top: 4.5vh;
+            
+        }
+        .content{
+            max-width: 80%;
+            margin-bottom: 15%;
+            left: 0;
+        }
+        
+        .kto-img_container{
+            width: 250px;
+            min-height: 29vh;
+        }
+
+        footer{
+            p{
+                font-size: 2.1vh;
+                font-weight: 300;
+                color: rgba(206, 206, 206, 1);
+                letter-spacing: .1vh;
+                padding: 0 4rem;
+            }
+            h4{
+                color: rgba(206, 206, 206, 1);
+                font-size: 2.8vh;
+                font-weight: 300;
+            }
+        } 
+    }
+
+    //portfolio content mobile
+    #moje{
+        .content{
+            max-width: 70%;
+            margin-bottom: 20%;
+        }
+
+        article{
+            height: 35vh;
+            margin-bottom: 10%;
+        }
+        .portfolio-box{
+            height: 35vh;
+        }
+
+        .portfolio-section_container{
+            height: 3vh;
+            margin-top: 5vh;
+
+            p{
+                font-size: .9em;
+            }
+
+        }
+
+        .portfolio-button_container a{
+            color: rgba(196, 196, 196, .7);
+        }
+
+        .portfolio-box_asside{
+            clip-path: polygon(0 76%, 100% 60%, 100% 100%, 0% 100%);
+            background-color: rgba(0, 0, 0, .4);
+            backdrop-filter: blur(3px);
+
+            h3{
+                top: 40%;
+                opacity: 1;
+                font-size: .8rem;
+                letter-spacing: .2rem;
+            }
+            
+            h4{
+                top: 45%;
+                opacity: 1;
+                font-size: .7rem;
+                letter-spacing: .4rem;
+            }
+        }
+        
+        .portfolio-box_cover{
+            filter: brightness(100%);
+            transition: .7s;
+            transform: scale(1.1);           
+        }
+        
+        
+        .portfolio-box_play-button{
+            left: 54%;
+        }
+
+        .portfolio-box.lubka-web{
+            .portfolio-box_asside{
+                background-color: rgba($lubkaWeb-color, .5);
+            }
+            
+            h4,h3{
+                color: rgba(0, 0, 0, 1);
+            }
+        }
+        .portfolio-box.my-web{
+            .portfolio-box_asside{
+                background-color: rgba($main-red, .5);
+            }
+            
+            h4,h3{  
+                color: rgba(196, 196, 196, 1);
+            }
+        }
+
+        .portfolio-box.baja-web{
+            .portfolio-box_asside{
+                background-color: rgba(60, 196, 151, .7);
+            }
+            
+            h4,h3{  
+                color: rgba(0, 0, 0, 1);
+            }
+        }
+    }
+
+    .portfolio-lightbox .portfolio-lightbox_text{
+        .p-lightbox_text_desc{
+            height: 75%;
+        }
+        .p-lightbox_text_btn_container{
+            height: 15%;
+        }
+    }
+    
+
+    //video content mobile
+    #vid{
+       article{
+           margin-bottom: 8%;
+       }
+
+       .content{
+           max-width: 73%;
+           margin-bottom: 20%;
+       }
+
+       .video-box{
+           height: 25vh;
+       }
+
+       .video-box_asside{
+           clip-path: polygon(0 0, 45% 0, 60% 100%, 0 100%);
+           background-color: rgba(0, 0, 0, .3);
+           backdrop-filter: blur(3px);
+       }
+       
+       .video-box_cover{
+           filter: grayscale(0%);
+           transform: scale(1.25);
+       }
+       
+       h3{
+           top: 60%;
+           opacity: 1;
+           font-size: .8rem;
+           letter-spacing: .3rem;
+       }
+       
+       h4{
+           top: 60%;
+           opacity: 1;
+           font-size: .6rem;
+           letter-spacing: .2rem;
+       }
+       
+       .video-box_play-button{
+           left: 54%;
+       }
+
+       .video-button_container a{
+        color: rgba(196, 196, 196, .7);
+       }
+
+       .video-mobile-title{
+           display: table;
+
+           p{
+               font-size: .9em;
+           }
+       }
+
+    }
+
+    //contact content mobile
+    #kont{
+        .content{
+            max-width: 95%;
+            margin-bottom: 10%;
+        }
+
+        .contact-list_item_title{
+            width: 100%;
+            text-align: center;
+
+            h3{
+                color: rgba($main-text, .8);
+                display: none;
+            }
+        }
+        .contact-list_item_icon{
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 8vh;
+            
+            i{
+                font-size: 6vh;
+                color: rgba($main-text, .8);
+            }
+
+        }
+    }
+}
+
+@media (min-width: 420px) and (max-width: 757px){
+    #vid{
+        .content{
+            max-width: 80%;
+        }
+    }
+
+    #kto-som footer{
+        p{
+            padding: 0;
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px){
+    .title{
+        bottom: 80%;
+        width: 20%;
+        left: 52%;
+        position: absolute;
+        //display: none;
+    }
+
+    .title2{
+        top: 20%;
+        width: 20%;
+        left: 52%;
+    }
+}
+
+
+  
+      
+
+@media (max-width: 420px){
+    //asside menu media queries
+    .asside-menu{
+        height: 100%;
+        left: 0;
+        transform: translate(-30%);
+    }
+
+    .main-menu{
+        display: none;
+    }
+    
+    .title{
+        bottom: 50%;
+        width: 40%;
+        position: absolute;  
+    }
+
+    .title2{
+        top: 49%;
+        width: 40%;
+        position: absolute; 
     }
 
     //background and icons mobile
@@ -196,6 +523,16 @@
                 color: rgba(196, 196, 196, 1);
             }
         }
+
+        .portfolio-box.baja-web{
+            .portfolio-box_asside{
+                background-color: rgba(60, 196, 151, .7);
+            }
+            
+            h4,h3{  
+                color: rgba(0, 0, 0, 1);
+            }
+        }
     }
 
     .portfolio-lightbox .portfolio-lightbox_text{
@@ -294,5 +631,18 @@
             }
 
         }
+    }
+}
+
+@media (min-width: 721px) and (max-width: 991px){
+    .title{
+        bottom: 80%;
+        width: 15.5%;
+        left: 50%;
+    }
+
+    .title2{
+        width: 15.5%;
+        left: 50%;
     }
 }
